@@ -89,7 +89,7 @@ All of these come from the proof test suite in `c2c-c/tests` (13 tests, last ful
 | Test | Result |
 |---|---|
 | TCP over the link (`c2c0`), each direction | 3.71 / 3.72 Gbit/s |
-| TCP both directions at once (60 s)* | 3.45 + 3.44 = 6.89 Gbit/s, 0 retransmits |
+| TCP both directions at once (60 s) | 3.45 + 3.44 = 6.89 Gbit/s, 0 retransmits |
 | Ping round trip | 0.31 ms |
 | Raw USB ceiling (in-kernel benchmark, no daemon) | 449.5 MiB/s per direction (~94% of the line rate) |
 
