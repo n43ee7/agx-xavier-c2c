@@ -53,6 +53,7 @@
 #include <map>
 #include <mutex>
 #include <set>
+#include <shared_mutex>
 #include <string>
 #include <unordered_map>
 #include <unordered_set>
@@ -181,6 +182,12 @@ struct Pending {
 
 struct State {
     std::recursive_mutex mu;
+    // Lookup tables (shadow, funcs, ranges, streams) also have their own rw lock.
+    // The "is this remote?" checks on every local CUDA call only take it shared,
+    // so a thread busy with the local GPU never waits behind a thread that holds
+    // mu while it waits on the Slave (that cost the local GPU ~35% before).
+    // Writers hold mu AND take tbl exclusive just around the change.
+    std::shared_mutex tbl;
     bool inited = false;
     int fd = -1;
     std::atomic<bool> dead{false};
@@ -702,7 +709,7 @@ bool is_shadow(CUcontext c) {
 bool on_remote() {
     State& s = S();
     if (s.fd < 0) return false;
-    std::lock_guard<std::recursive_mutex> g(s.mu);
+    std::shared_lock<std::shared_mutex> g(s.tbl);
     return is_shadow(current_ctx());
 }
 
@@ -720,7 +727,7 @@ const Range* find_range(uint64_t p, uint64_t* base = nullptr) {
 bool is_remote_ptr(uint64_t p) {
     State& s = S();
     if (s.fd < 0) return false;
-    std::lock_guard<std::recursive_mutex> g(s.mu);
+    std::shared_lock<std::shared_mutex> g(s.tbl);
     return find_range(p) != nullptr;
 }
 // app-visible address -> slave address (only differs for aliases)
@@ -734,6 +741,7 @@ uint64_t xlate(uint64_t p) {
 bool is_remote_stream(CUstream st) {
     State& s = S();
     if (s.fd < 0) return false;
+    std::shared_lock<std::shared_mutex> g(s.tbl);
     if (st == nullptr || st == CU_STREAM_LEGACY || st == CU_STREAM_PER_THREAD)
         return is_shadow(current_ctx());
     return s.streams.count(st) != 0;
@@ -985,7 +993,7 @@ CUresult r_alloc_big(CUdeviceptr* out, uint64_t n) {
         win_give(va, size);
         return r;
     }
-    s.ranges[va] = {n, size, Kind::Alloc, 0};
+    { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.ranges[va] = {n, size, Kind::Alloc, 0}; }
     *out = va;
     dbg("alloc %llu bytes -> %#llx", (unsigned long long)n, (unsigned long long)va);
     return CUDA_SUCCESS;
@@ -996,7 +1004,7 @@ CUresult r_free_big(uint64_t va) {
     auto it = s.ranges.find(va);
     if (it == s.ranges.end()) return CUDA_ERROR_INVALID_VALUE;
     uint64_t reserved = it->second.reserved;
-    s.ranges.erase(it);
+    { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.ranges.erase(it); }
     post(OP_MEM_FREE, &va, 8);
     // slave unmaps before it processes anything we send after this, so the
     // range can be reused right away
@@ -1018,13 +1026,13 @@ CUresult r_alloc(CUdeviceptr* out, uint64_t n) {
         if (r) return r;
         s.slabs[base] = Slab{base};
         // the slab isn't an app allocation, keep it out of range lookups
-        s.ranges.erase(base);
+        { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.ranges.erase(base); }
         // drop the old slab if nothing in it is still alive
         auto old = s.slabs.find(s.cur_slab);
         if (old != s.slabs.end() && old->second.live == 0) {
             uint64_t ob = old->first;
             s.slabs.erase(old);
-            s.ranges[ob] = {kGran, kGran, Kind::Alloc, 0};
+            { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.ranges[ob] = {kGran, kGran, Kind::Alloc, 0}; }
             r_free_big(ob);
         }
         s.cur_slab = base;
@@ -1033,7 +1041,7 @@ CUresult r_alloc(CUdeviceptr* out, uint64_t n) {
     uint64_t p = cs->first + cs->second.used;
     cs->second.used += need;
     cs->second.live++;
-    s.ranges[p] = {n, need, Kind::Small, cs->first};
+    { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.ranges[p] = {n, need, Kind::Small, cs->first}; }
     *out = p;
     return CUDA_SUCCESS;
 }
@@ -1046,11 +1054,11 @@ CUresult r_free(uint64_t p) {
     if (it->second.kind == Kind::Alloc) return r_free_big(p);
     if (it->second.kind != Kind::Small) return CUDA_ERROR_INVALID_VALUE;
     uint64_t slab = it->second.target;
-    s.ranges.erase(it);
+    { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.ranges.erase(it); }
     auto sl = s.slabs.find(slab);
     if (sl != s.slabs.end() && --sl->second.live == 0 && slab != s.cur_slab) {
         s.slabs.erase(sl);
-        s.ranges[slab] = {kGran, kGran, Kind::Alloc, 0};
+        { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.ranges[slab] = {kGran, kGran, Kind::Alloc, 0}; }
         r_free_big(slab);
     }
     return CUDA_SUCCESS;
@@ -1145,7 +1153,7 @@ void forget_module(CUmodule m) {
     for (auto f = s.funcs.begin(); f != s.funcs.end();) {
         if (f->second->mod == md) {
             delete f->second;
-            f = s.funcs.erase(f);
+            { std::unique_lock<std::shared_mutex> tw_(S().tbl); f = s.funcs.erase(f); }
         } else {
             ++f;
         }
@@ -1211,7 +1219,7 @@ CUresult r_launch(Func* f, unsigned gx, unsigned gy, unsigned gz, unsigned bx, u
 Func* remote_func(CUfunction f) {
     State& s = S();
     if (s.fd < 0) return nullptr;
-    std::lock_guard<std::recursive_mutex> g(s.mu);
+    std::shared_lock<std::shared_mutex> g(s.tbl);
     auto it = s.funcs.find(f);
     return it == s.funcs.end() ? nullptr : it->second;
 }
@@ -1336,7 +1344,7 @@ CUresult make_shadow(CUcontext* out, unsigned flags) {
     int local0 = 0;
     CUresult r = REAL(cuCtxCreate_v2)(out, flags, local0);
     if (r) return r;
-    s.shadow.insert(*out);
+    { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.shadow.insert(*out); }
     if (need_win) setup_window();  // only ctx so far, reserve while it's current
     return CUDA_SUCCESS;
 }
@@ -1592,6 +1600,7 @@ static CUresult prim_reset(CUdevice d) {
         std::lock_guard<std::recursive_mutex> g(s.mu);
         CUresult r = call(OP_RESET, nullptr, 0);
         // remote side is wiped, forget everything we tracked
+        std::unique_lock<std::shared_mutex> tw_(s.tbl);
         for (auto& kv : s.ranges)
             if (kv.second.kind == Kind::Alloc) win_give(kv.first, kv.second.reserved);
         for (auto& kv : s.slabs) win_give(kv.first, kGran);
@@ -1634,7 +1643,7 @@ C2CAPI CUresult cuCtxDestroy_v2(CUcontext c) {
     {
         std::lock_guard<std::recursive_mutex> g(s.mu);
         if (c == s.prim) return CUDA_ERROR_INVALID_CONTEXT;  // primary ctx: Release/Reset instead
-        s.shadow.erase(c);
+        { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.shadow.erase(c); }
     }
     return REAL(cuCtxDestroy_v2)(c);
 }
@@ -2333,7 +2342,7 @@ C2CAPI CUresult cuModuleGetFunction(CUfunction* f, CUmodule m, const char* name)
     auto old = s.funcs.find(*f);
     if (old != s.funcs.end() && old->second->mod == it->second && old->second->name == name) return r;
     if (old != s.funcs.end()) delete old->second;
-    s.funcs[*f] = new Func{it->second, name, s.next_id++};
+    { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.funcs[*f] = new Func{it->second, name, s.next_id++}; }
     return r;
 }
 
@@ -2361,7 +2370,7 @@ C2CAPI CUresult cuModuleGetGlobal_v2(CUdeviceptr* dp, size_t* bytes, CUmodule m,
                 uint64_t al = round_up(s.alias_next, 256);
                 if (al + std::max<uint64_t>(rep.size, 1) > s.alias_end) return CUDA_ERROR_OUT_OF_MEMORY;
                 s.alias_next = al + std::max<uint64_t>(rep.size, 1);
-                s.ranges[al] = {rep.size, 0, Kind::Alias, rep.ptr};
+                { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.ranges[al] = {rep.size, 0, Kind::Alias, rep.ptr}; }
                 a = s.alias_of.emplace(key, al).first;
             }
             uint64_t b;
@@ -2421,7 +2430,7 @@ static CUresult stream_create(CUstream* st, unsigned flags, int prio, bool with_
     if (r || !on_remote()) return r;
     State& s = S();
     std::lock_guard<std::recursive_mutex> g(s.mu);
-    s.streams.insert(*st);
+    { std::unique_lock<std::shared_mutex> tw_(S().tbl); s.streams.insert(*st); }
     MsgStream m{reinterpret_cast<uint64_t>(*st), flags, prio};
     post(OP_STREAM_CREATE, &m, sizeof m);
     return r;
@@ -2435,7 +2444,9 @@ C2CAPI CUresult cuStreamDestroy_v2(CUstream st) {
     State& s = S();
     if (s.fd >= 0) {
         std::lock_guard<std::recursive_mutex> g(s.mu);
-        if (s.streams.erase(st)) {
+        size_t erased_;
+        { std::unique_lock<std::shared_mutex> tw_(S().tbl); erased_ = s.streams.erase(st); }
+        if (erased_) {
             uint64_t sid = reinterpret_cast<uint64_t>(st);
             post(OP_STREAM_DESTROY, &sid, 8);
         }

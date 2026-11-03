@@ -8,7 +8,32 @@ AI Inference is the new revolution. Following the concept of NVIDIA DGX Spark wh
 ## C2C Architecture
 This protocol is a 1 Root 1 Client model where there is one Master that connects to the Slave machine and establish a handshake to commence transfers. The Master node generally invokes transactions to the Slave node. The C2C protocol is packaged as a linux system service that constantly runs until the connection is aborted due to any issue. The protocl is installed as a kernel object to the master node and the slave node (each with a fixed purpose). 
 
-NOTE TO MYSELF: I will try to draw and stuff here to explain a bit better
+Here is roughly what it looks like. Your program only ever runs on the Master, the Slave just does what it's told:
+
+```
+                 MASTER (xavier1)                                       SLAVE (xavier2)
+ ┌─────────────────────────────────────────────┐        ┌─────────────────────────────────────────────┐
+ │  your program (unmodified)                  │        │                                             │
+ │     │ CUDA calls     │ memory    │ jobs      │        │                                             │
+ │     ▼                ▼           ▼           │        │                                             │
+ │  libc2ccuda       swap (nbd)   c2c cpu       │        │  c2c-gpud        c2c-memd      sshd         │
+ │  (fake libcuda)   c2c-rmem                   │        │  (runs the GPU   (lends RAM)   (runs jobs)  │
+ │     │                │           │           │        │   calls)            ▲           ▲           │
+ │     │                └─────┬─────┘           │        │     ▲               └─────┬─────┘           │
+ │     │                  c2cd (service):       │        │     │                c2cd (service):        │
+ │     │               handshake, heartbeat,    │        │     │             handshake, heartbeat,     │
+ │     │               c2c0 network link        │        │     │             c2c0 network link         │
+ │     ▼                      ▼                 │        │     │                     ▲                 │
+ │  ┌────────────── kernel object ────────────┐ │        │  ┌───────────── kernel object ─────────────┐ │
+ │  │ raw data channels  │  link channel      │ │        │  │ raw data channels  │  link channel      │ │
+ │  └─────────────────────────────────────────┘ │        │  └─────────────────────────────────────────┘ │
+ └──────────────────────┬──────────────────────┘        └──────────────────────┬──────────────────────┘
+                        │                                                      │
+                        └──────────────── C2C channel (USB-C / PCIe) ──────────┘
+                          1. Master sends HELLO, Slave answers (shared key)
+                          2. link UP, heartbeat every 500 ms
+                          3. Master sends work, Slave sends results back
+```
 
 ## C2C Capabilities
 The table below shows the performance of different C2C Modes to get an idea of what are the limitations
@@ -28,7 +53,27 @@ The table below shows the performance of different C2C Modes to get an idea of w
 ### USB-C (C2C-C):
 This C2C methodology removes all kinds layers guarding the USB Protocol and simply uses raw USB-C to expose 4 raw data channels which we communicate over. The philosophy behind this methodology was for cases where there is not a lot of simultaneous GPU read and writes (i.e. having an LLM model stuffed in the memory) and running it makes sense. Also if the PCIe ports are being utilized for external compute appliances, the USB-C method seems to be the only option...
 
-NOTE TO MYSELF: Include them drawings here
+On the cable the Slave shows up as one USB device with 5 interfaces, each one with its own pair of bulk endpoints. Interface 0 is the link the daemon uses (handshake, heartbeat, the `c2c0` network). Interfaces 1-4 are the raw channels and the GPU traffic skips the daemon and TCP completely by using them:
+
+```
+   MASTER (USB host)                         one USB-C cable                     SLAVE (USB device)
+                                    USB 3.1 Gen 1, 5 Gbit/s, full duplex
+ ┌──────────────────────┐                                                      ┌──────────────────────┐
+ │ c2cd ── c2c0 (TCP/IP)│◄─── interface 0: link (bulk IN + OUT) ─────────────► │ c2cd ── c2c0 (TCP/IP)│
+ │ ssh, nbd swap, jobs  │                                                      │ sshd, c2c-memd       │
+ │                      │                                                      │                      │
+ │ program A ── ch0 ────│◄─── interface 1: raw channel 0 ─────────────────────►│── session ┐          │
+ │ program B ── ch1 ────│◄─── interface 2: raw channel 1 ─────────────────────►│── session ├ c2c-gpud │
+ │ (free)       ch2     │◄─── interface 3: raw channel 2 ─────────────────────►│           │ (1 proc  │
+ │ (free)       ch3     │◄─── interface 4: raw channel 3 ─────────────────────►│           ┘ per prog)│
+ │                      │                                                      │          ▼           │
+ │ program #5 → no free channel, falls back to TCP over c2c0                   │      Slave's GPU     │
+ └──────────────────────┘                                                      └──────────────────────┘
+     /dev/c2c0, /dev/c2cch0..3                                                  /dev/c2c0, /dev/c2cch0..3
+     (c2c_host.ko)                                                              (usb_f_c2c.ko)
+```
+
+Each raw channel is basically a pipe with a session on it. A program opens a channel, gets its own `c2c-gpud` process on the Slave and when the program exits the channel frees up for the next one.
 
 ### PCIe (C2C-PCIE):
 Probably the most preferred method here since according to NVIDIA documentations the PCIe Root complex on the AGX Xavier is a configurable endpoint and it can have speeds up to ~15.3 GiB/s so the assumption is that this will eradicate all channel based limitations and hit us with the irreplaceable limitation of the CPU. This medium though requires a bit of a hardware change. You will have to buy a PCIe Male to Male cable WITH RX/TX Swapped for it to work properly else you might fry the board.

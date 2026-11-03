@@ -229,8 +229,7 @@ gpu/                      remote GPU: libc2ccuda (Master), c2c-gpud (Slave), c2c
 rmem/                     c2c-memd (Slave lends RAM), c2c-rmem (Master attaches it as swap)
 install/                  the c2c CLI, c2c-svc, systemd units, gadget script, installer
 tests/                    T01-T13 + workloads (tests/README.md)
-bench/nvidia/             NVIDIA's own benchmarks over the link (bandwidthTest, p2p, nvbandwidth, NCCL)
-tools/                    raw link tools (rawpp, test_bw_spd), module load scripts, dev tools
+bench/nvidia/             NVIDIA's own benchmarks over the link (bandwidthTest, p2p, nvbandwidth, NCCL)tools/                    raw link tools (rawpp, test_bw_spd), module load scripts, dev tools
 docs/                     test logs, design + alternatives, work history, archived board configs
 ```
 
