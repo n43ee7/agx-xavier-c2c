@@ -1,0 +1,13 @@
+[Unit]
+Description=C2C remote memory server - lends this node's RAM to the C2C master
+After=c2cd.service
+Wants=c2cd.service
+
+[Service]
+Type=simple
+ExecStart=/opt/c2c/bin/c2c-svc memd
+Restart=on-failure
+RestartSec=2
+
+[Install]
+WantedBy=multi-user.target

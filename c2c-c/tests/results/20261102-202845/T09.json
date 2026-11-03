@@ -1,0 +1,44 @@
+{
+  "id": "T09",
+  "name": "one process uses both GPUs",
+  "status": "PASS",
+  "summary": "one process, 2 GPUs: split SAXPY over 268435456 elements on 2 GPUs ok=True (3.822 s); per-GPU checks [True, True]; samples {'simpleMultiGPU': 'PASS', 'MonteCarloMultiGPU': 'PASS', 'deviceQuery': 'PASS'}; deviceQuery: Detected 2 CUDA Capable device(s)",
+  "time": "2026-11-02 20:37:53",
+  "metrics": {
+    "gpus": 2,
+    "split_saxpy": {
+      "devices": 2,
+      "elements": 268435456,
+      "seconds": 3.822,
+      "ok": true
+    },
+    "per_gpu": [
+      {
+        "device": 0,
+        "pci_domain": 0,
+        "ok": true,
+        "saxpy_ok": true,
+        "sgemm_ok": true,
+        "streams_ok": true,
+        "htod_pinned_mbs": 37427.7,
+        "async_launches_per_s": 170810
+      },
+      {
+        "device": 1,
+        "pci_domain": 3116,
+        "ok": true,
+        "saxpy_ok": true,
+        "sgemm_ok": true,
+        "streams_ok": true,
+        "htod_pinned_mbs": 469.4,
+        "async_launches_per_s": 264739
+      }
+    ],
+    "samples": {
+      "simpleMultiGPU": "PASS",
+      "MonteCarloMultiGPU": "PASS",
+      "deviceQuery": "PASS"
+    },
+    "deviceQuery": "Detected 2 CUDA Capable device(s)"
+  }
+}

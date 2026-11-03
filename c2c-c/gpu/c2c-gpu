@@ -1,0 +1,28 @@
+#!/bin/bash
+# c2c-gpu: run any CUDA program (unmodified) with the peer's GPU added.
+#
+#   c2c-gpu run CMD [ARGS...]   runs CMD, it sees the local GPU(s) + the remote one
+#                               (device 0 = this board, device 1 = the peer).
+#                               CUDA_VISIBLE_DEVICES=1 to run on the peer only.
+#   c2c-gpu ls                  list the GPUs a program would see
+#
+# env: C2C_GPU_SERVER (default 10.77.0.2[:10810]), C2C_GPU_DEBUG=1,
+#      C2C_GPU_STATS=1 (traffic summary on exit), C2C_GPU_DISABLE=1
+set -e
+here="$(cd "$(dirname "$(readlink -f "$0")")" && pwd)"
+for d in /opt/c2c/lib/cuda "$here/lib/cuda" "$here"; do
+    [ -e "$d/libcuda.so.1" ] && { LIBDIR="$d"; break; }
+done
+[ -n "$LIBDIR" ] || { echo "c2c-gpu: libc2ccuda not installed" >&2; exit 1; }
+case "${1:-}" in
+    run)
+        shift; [ $# -gt 0 ] || { echo "usage: c2c-gpu run CMD [ARGS...]" >&2; exit 2; }
+        export LD_LIBRARY_PATH="$LIBDIR${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+        exec "$@" ;;
+    ls)
+        export LD_LIBRARY_PATH="$LIBDIR${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
+        for b in /opt/c2c/bin/c2c-gpu-ls "$here/c2c-gpu-ls"; do [ -x "$b" ] && exec "$b"; done
+        echo "c2c-gpu: c2c-gpu-ls not found" >&2; exit 1 ;;
+    *)
+        sed -n '2,12p' "$0" | sed 's/^# \{0,1\}//'; exit 2 ;;
+esac

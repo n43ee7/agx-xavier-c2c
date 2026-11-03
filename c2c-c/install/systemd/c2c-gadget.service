@@ -1,0 +1,15 @@
+[Unit]
+Description=C2C USB gadget (slave): expose the c2c bulk function on the USB-C port
+After=nv-l4t-usb-device-mode.service systemd-modules-load.service
+PartOf=nv-l4t-usb-device-mode.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=-/opt/c2c/bin/c2c-ensure-module.sh slave
+ExecStart=/opt/c2c/bin/c2c-gadget.sh attach
+ExecStop=/opt/c2c/bin/c2c-gadget.sh detach
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target

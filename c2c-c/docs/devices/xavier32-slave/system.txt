@@ -1,0 +1,27 @@
+## captured 2026-11-02T12:50:27-06:00
+xavier32
+# R35 (release), REVISION: 6.5, GCID: 46196569, BOARD: t186ref, EABI: aarch64, DATE: Wed Jul  1 09:42:50 UTC 2026
+Linux xavier32 5.10.216-tegra #1 SMP PREEMPT Wed Jul 1 02:07:52 PDT 2026 aarch64 aarch64 aarch64 GNU/Linux
+cuda-runtime-11-4	11.4.19-1
+              total        used        free      shared  buff/cache   available
+Mem:             30           4          23           0           1          25
+Swap:            15           0          15
+NV Power Mode: MAXN
+0
+NVPM ERROR: Error opening /sys/kernel/nvpmodel_emc_cap/emc_iso_cap: 13
+NVPM ERROR: failed to read PARAM EMC: ARG MAX_FREQ: PATH /sys/kernel/nvpmodel_emc_cap/emc_iso_cap
+1
+Failed to get unit file state for c2c-memd.service: No such file or directory
+enabled
+enabled
+usb_f_c2c              28672  3
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+dummy0           DOWN           
+eth0             UP             192.168.4.171/22 fd36:e39a:1bc0:14d7:9d1:abd7:2ee9:17c4/64 fd36:e39a:1bc0:14d7:1e2f:1866:f4e3:605e/64 fe80::edf8:56d2:d21e:3320/64 
+l4tbr0           DOWN           192.168.55.1/24 fe80::1/128 fe80::3892:3aff:fe49:c699/64 
+rndis0           DOWN           fe80::3892:3aff:fe49:c699/64 
+usb0             DOWN           fe80::3892:3aff:fe49:c69b/64 
+docker0          DOWN           172.17.0.1/16 
+c2c0             UNKNOWN        10.77.0.2/30 
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/mmcblk0p1   28G   23G  3.4G  88% /

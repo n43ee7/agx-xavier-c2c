@@ -1,0 +1,12 @@
+{
+  "passed": 1,
+  "total": 1,
+  "tests": [
+    {
+      "id": "T01",
+      "name": "link health",
+      "status": "PASS",
+      "summary": "RTT 0.334 ms avg, TCP 3.712 Gbit/s master->slave, 3.717 Gbit/s slave->master"
+    }
+  ]
+}

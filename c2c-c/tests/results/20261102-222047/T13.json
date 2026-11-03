@@ -1,0 +1,21 @@
+{
+  "id": "T13",
+  "name": "raw channel: clean failure and recovery after a USB cut",
+  "status": "PASS",
+  "summary": "USB cut 1.5 s: running program ended in 0.0 s with exit 2 (no hang=True); link UP after 2.5 s; new raw session /dev/c2cch0:: up 470.4 / down 443.6 MB/s, sync p50 140.5 us",
+  "time": "2026-11-02 22:33:26",
+  "metrics": {
+    "first_program_exit": 2,
+    "ended_after_cut_s": 0.0,
+    "no_hang": true,
+    "link_state": "UP",
+    "link_back_s": 2.5,
+    "after": {
+      "h2d_mbs": 470.4,
+      "d2h_mbs": 443.6,
+      "bidir_mbs": 850.5,
+      "sync_p50_us": 140.5
+    },
+    "after_via": "/dev/c2cch0:"
+  }
+}

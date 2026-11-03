@@ -1,0 +1,77 @@
+nvbandwidth Version: v0.5
+Built from Git version: v0.5
+
+NOTE: This tool reports current measured bandwidth on your system.
+Additional system-specific tuning may be required to achieve maximal peak bandwidth.
+
+CUDA Runtime Version: 11040
+CUDA Driver Version: 11040
+Driver Version: L4T R35.6.5
+
+Device 0: Xavier
+Device 1: Xavier
+
+Running host_to_device_memcpy_ce.
+memcpy CE CPU(row) -> GPU(column) bandwidth (GB/s)
+           0         1
+ 0     38.97      0.47
+
+SUM host_to_device_memcpy_ce 39.44
+
+Running device_to_host_memcpy_ce.
+memcpy CE CPU(row) <- GPU(column) bandwidth (GB/s)
+           0         1
+ 0     38.96      0.46
+
+SUM device_to_host_memcpy_ce 39.42
+
+Running host_to_device_bidirectional_memcpy_ce.
+memcpy CE CPU(row) <-> GPU(column) bandwidth (GB/s)
+           0         1
+ 0     38.95      0.47
+
+SUM host_to_device_bidirectional_memcpy_ce 39.42
+
+Running device_to_host_bidirectional_memcpy_ce.
+memcpy CE CPU(row) <-> GPU(column) bandwidth (GB/s)
+           0         1
+ 0     38.94      0.46
+
+SUM device_to_host_bidirectional_memcpy_ce 39.41
+
+Waived: 
+Waived: 
+Waived: 
+Waived: 
+Running all_to_host_memcpy_ce.
+memcpy CE CPU(row) <- GPU(column) bandwidth (GB/s)
+           0         1
+ 0     38.82      0.46
+
+SUM all_to_host_memcpy_ce 39.28
+
+Running all_to_host_bidirectional_memcpy_ce.
+memcpy CE CPU(row) <-> GPU(column) bandwidth (GB/s)
+           0         1
+ 0     38.80      0.46
+
+SUM all_to_host_bidirectional_memcpy_ce 39.27
+
+Running host_to_all_memcpy_ce.
+memcpy CE CPU(row) -> GPU(column) bandwidth (GB/s)
+           0         1
+ 0     38.84      0.47
+
+SUM host_to_all_memcpy_ce 39.30
+
+Running host_to_all_bidirectional_memcpy_ce.
+memcpy CE CPU(row) <-> GPU(column) bandwidth (GB/s)
+           0         1
+ 0     11.13      0.47
+
+SUM host_to_all_bidirectional_memcpy_ce 11.60
+
+Waived: 
+Waived: 
+Waived: 
+Waived: 

@@ -1,0 +1,59 @@
+batchCUBLAS Starting...
+
+GPU Device 0: "Xavier" with compute capability 7.2
+
+
+ ==== Running single kernels ==== 
+
+Testing sgemm
+#### args: ta=0 tb=0 m=128 n=128 k=128  alpha = (0xbf800000, -1) beta= (0x40000000, 2)
+#### args: lda=128 ldb=128 ldc=128
+^^^^ elapsed = 0.03326011 sec  GFLOPS=0.126106
+@@@@ sgemm test OK
+Testing dgemm
+#### args: ta=0 tb=0 m=128 n=128 k=128  alpha = (0x0000000000000000, 0) beta= (0x0000000000000000, 0)
+#### args: lda=128 ldb=128 ldc=128
+^^^^ elapsed = 0.00089312 sec  GFLOPS=4.69626
+@@@@ dgemm test OK
+
+ ==== Running N=10 without streams ==== 
+
+Testing sgemm
+#### args: ta=0 tb=0 m=128 n=128 k=128  alpha = (0xbf800000, -1) beta= (0x00000000, 0)
+#### args: lda=128 ldb=128 ldc=128
+^^^^ elapsed = 0.00348687 sec  GFLOPS=12.0288
+@@@@ sgemm test OK
+Testing dgemm
+#### args: ta=0 tb=0 m=128 n=128 k=128  alpha = (0xbff0000000000000, -1) beta= (0x0000000000000000, 0)
+#### args: lda=128 ldb=128 ldc=128
+^^^^ elapsed = 0.01870704 sec  GFLOPS=2.2421
+@@@@ dgemm test OK
+
+ ==== Running N=10 with streams ==== 
+
+Testing sgemm
+#### args: ta=0 tb=0 m=128 n=128 k=128  alpha = (0x40000000, 2) beta= (0x40000000, 2)
+#### args: lda=128 ldb=128 ldc=128
+^^^^ elapsed = 0.00363994 sec  GFLOPS=11.523
+@@@@ sgemm test OK
+Testing dgemm
+#### args: ta=0 tb=0 m=128 n=128 k=128  alpha = (0xbff0000000000000, -1) beta= (0x0000000000000000, 0)
+#### args: lda=128 ldb=128 ldc=128
+^^^^ elapsed = 0.00653696 sec  GFLOPS=6.41629
+@@@@ dgemm test OK
+
+ ==== Running N=10 batched ==== 
+
+Testing sgemm
+#### args: ta=0 tb=0 m=128 n=128 k=128  alpha = (0x3f800000, 1) beta= (0xbf800000, -1)
+#### args: lda=128 ldb=128 ldc=128
+^^^^ elapsed = 0.00363493 sec  GFLOPS=11.5389
+@@@@ sgemm test OK
+Testing dgemm
+#### args: ta=0 tb=0 m=128 n=128 k=128  alpha = (0xbff0000000000000, -1) beta= (0x4000000000000000, 2)
+#### args: lda=128 ldb=128 ldc=128
+^^^^ elapsed = 0.01024294 sec  GFLOPS=4.09482
+@@@@ dgemm test OK
+
+Test Summary
+0 error(s)

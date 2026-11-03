@@ -1,0 +1,18 @@
+{
+  "id": "T07",
+  "name": "remote memory survives link outage",
+  "status": "PASS",
+  "summary": "1 GiB in slave RAM; link cut for 1.5 s mid-read; read resumed, data identical, device still attached; kfix loaded=1",
+  "time": "2026-11-01 21:28:55",
+  "metrics": {
+    "data_mib": 1024,
+    "write_mib_s": 339.9,
+    "link_outage_s": 1.52,
+    "read_total_s": 5.98,
+    "link_state_after": "UP",
+    "dd_exit": 0,
+    "still_attached": true,
+    "data_identical": true,
+    "c2c_kfix_loaded": true
+  }
+}

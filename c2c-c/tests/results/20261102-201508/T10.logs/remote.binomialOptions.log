@@ -1,0 +1,22 @@
+[/home/jetson-agx/C2C-thunderbolt/tests/build/samples/4_Finance/binomialOptions/binomialOptions] - Starting...
+GPU Device 0: "Xavier" with compute capability 7.2
+
+Generating input data...
+Running GPU binomial tree...
+Options count            : 1024     
+Time steps               : 2048     
+binomialOptionsGPU() time: 25.698999 msec
+Options per second       : 39845.909324     
+Running CPU binomial tree...
+Comparing the results...
+GPU binomial vs. Black-Scholes
+L1 norm: 2.220214E-04
+CPU binomial vs. Black-Scholes
+L1 norm: 2.220922E-04
+CPU binomial vs. GPU binomial
+L1 norm: 7.997008E-07
+Shutting down...
+
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+
+Test passed

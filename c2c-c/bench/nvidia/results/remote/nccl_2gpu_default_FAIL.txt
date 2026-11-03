@@ -1,0 +1,12 @@
+# nThread 1 nGpus 2 minBytes 8 maxBytes 67108864 step: 4(factor) warmup iters: 5 iters: 20 agg iters: 1 validation: 1 graph: 0
+#
+# Using devices
+#  Rank  0 Group  0 Pid  31875 on     xavier device  0 [0x00] Xavier
+#  Rank  1 Group  0 Pid  31875 on     xavier device  1 [0x00] Xavier
+NCCL version 2.18.6+cuda11.4
+
+xavier:31875:31885 [1] misc/shmutils.cc:102 NCCL WARN Cuda failure 'operation not supported'
+
+xavier:31875:31885 [1] misc/shmutils.cc:112 NCCL WARN Error while creating shared memory segment /dev/shm/nccl-RC124o (size 6492160)
+xavier: Test NCCL failure common.cu:954 'unhandled cuda error (run with NCCL_DEBUG=INFO for details) / '
+ .. xavier pid 31875: Test failure common.cu:844

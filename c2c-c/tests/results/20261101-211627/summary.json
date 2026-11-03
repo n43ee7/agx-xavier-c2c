@@ -1,0 +1,12 @@
+{
+  "passed": 1,
+  "total": 1,
+  "tests": [
+    {
+      "id": "T07",
+      "name": "remote memory survives link outage",
+      "status": "PASS",
+      "summary": "1 GiB in slave RAM; link cut for 1.5 s mid-read; read resumed, data identical, device still attached; kfix loaded=1"
+    }
+  ]
+}

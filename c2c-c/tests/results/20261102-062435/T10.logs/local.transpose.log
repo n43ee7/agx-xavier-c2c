@@ -1,0 +1,20 @@
+Transpose Starting...
+
+GPU Device 0: "Xavier" with compute capability 7.2
+
+> Device 0: "Xavier"
+> SM Capability 7.2 detected:
+> [Xavier] has 8 MP(s) x 64 (Cores/MP) = 512 (Cores)
+> Compute performance scaling factor = 1.00
+
+Matrix size: 1024x1024 (64x64 tiles), tile size: 16x16, block size: 16x16
+
+transpose simple copy       , Throughput = 93.8685 GB/s, Time = 0.08323 ms, Size = 1048576 fp32 elements, NumDevsUsed = 1, Workgroup = 256
+transpose shared memory copy, Throughput = 88.4625 GB/s, Time = 0.08831 ms, Size = 1048576 fp32 elements, NumDevsUsed = 1, Workgroup = 256
+transpose naive             , Throughput = 39.9922 GB/s, Time = 0.19535 ms, Size = 1048576 fp32 elements, NumDevsUsed = 1, Workgroup = 256
+transpose coalesced         , Throughput = 78.5872 GB/s, Time = 0.09941 ms, Size = 1048576 fp32 elements, NumDevsUsed = 1, Workgroup = 256
+transpose optimized         , Throughput = 85.0685 GB/s, Time = 0.09184 ms, Size = 1048576 fp32 elements, NumDevsUsed = 1, Workgroup = 256
+transpose coarse-grained    , Throughput = 84.9578 GB/s, Time = 0.09196 ms, Size = 1048576 fp32 elements, NumDevsUsed = 1, Workgroup = 256
+transpose fine-grained      , Throughput = 86.7371 GB/s, Time = 0.09007 ms, Size = 1048576 fp32 elements, NumDevsUsed = 1, Workgroup = 256
+transpose diagonal          , Throughput = 70.8835 GB/s, Time = 0.11022 ms, Size = 1048576 fp32 elements, NumDevsUsed = 1, Workgroup = 256
+Test passed

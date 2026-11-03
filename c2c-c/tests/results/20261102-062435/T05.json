@@ -1,0 +1,26 @@
+{
+  "id": "T05",
+  "name": "RAM pool: one program larger than master RAM",
+  "status": "PASS",
+  "summary": "one process used 20.5 GiB on a 14.5 GiB master (+5.96 GiB over physical): 12.2 GiB held in slave RAM, zram 0.0 GiB, write 0.353 GiB/s, verify 0.149 GiB/s, 0 errors",
+  "time": "2026-11-02 06:31:42",
+  "metrics": {
+    "gib": 20.5,
+    "bytes": 22011707392,
+    "write_s": 58.02,
+    "verify_s": 137.6,
+    "write_gib_s": 0.353,
+    "verify_gib_s": 0.149,
+    "errors": 0,
+    "rss_after_write_kb": 10959836,
+    "swap_after_write_kb": 10537152,
+    "peak_rss_kb": 12438364,
+    "peak_swap_kb": 10537152,
+    "master_physical_gib": 14.54,
+    "exit_code": 0,
+    "peak_remote_swap_gib": 12.2,
+    "peak_zram_gib": 0.0,
+    "peak_slave_memd_resident_gib": 12.8,
+    "footprint_over_physical_gib": 5.96
+  }
+}

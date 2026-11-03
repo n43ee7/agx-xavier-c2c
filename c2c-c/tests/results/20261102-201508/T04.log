@@ -1,0 +1,16 @@
+  write   1.0 / 8.0 GiB  rss 1.0 GiB  swapped 0.0 GiB  0 s
+  write   2.0 / 8.0 GiB  rss 2.0 GiB  swapped 0.0 GiB  1 s
+  write   3.0 / 8.0 GiB  rss 1.0 GiB  swapped 2.0 GiB  12 s
+  write   4.0 / 8.0 GiB  rss 2.0 GiB  swapped 2.0 GiB  17 s
+  write   5.0 / 8.0 GiB  rss 2.0 GiB  swapped 3.0 GiB  25 s
+  write   6.0 / 8.0 GiB  rss 2.0 GiB  swapped 4.0 GiB  33 s
+  write   7.0 / 8.0 GiB  rss 2.0 GiB  swapped 5.0 GiB  42 s
+  write   8.0 / 8.0 GiB  rss 2.0 GiB  swapped 6.0 GiB  50 s
+  verify   1.0 / 8.0 GiB  errors 0  10 s
+  verify   2.0 / 8.0 GiB  errors 0  19 s
+  verify   3.0 / 8.0 GiB  errors 0  26 s
+  verify   4.0 / 8.0 GiB  errors 0  32 s
+  verify   5.0 / 8.0 GiB  errors 0  39 s
+  verify   6.0 / 8.0 GiB  errors 0  46 s
+  verify   7.0 / 8.0 GiB  errors 0  53 s
+  verify   8.0 / 8.0 GiB  errors 0  59 s

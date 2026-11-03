@@ -1,0 +1,19 @@
+## captured 2026-11-02T13:50:30-05:00
+xavier
+# R35 (release), REVISION: 6.5, GCID: 46196569, BOARD: t186ref, EABI: aarch64, DATE: Wed Jul  1 09:42:50 UTC 2026
+Linux xavier 5.10.216-tegra #1 SMP PREEMPT Wed Jul 1 02:07:52 PDT 2026 aarch64 aarch64 aarch64 GNU/Linux
+              total        used        free      shared  buff/cache   available
+Mem:             14           2          11           0           0          11
+Swap:             7           0           7
+enabled
+c2c_kfix               20480  0
+c2c_host               32768  1
+lo               UNKNOWN        127.0.0.1/8 ::1/128 
+dummy0           DOWN           
+eth0             UP             192.168.4.166/22 fd36:e39a:1bc0:14d7:6bea:f8da:5da0:cb23/64 fd36:e39a:1bc0:14d7:d33d:ff8f:342f:4f55/64 fe80::df98:be93:bd32:669c/64 
+l4tbr0           DOWN           
+rndis0           DOWN           
+usb0             DOWN           
+wlan0            DOWN           
+docker0          DOWN           172.17.0.1/16 
+c2c0             UNKNOWN        10.77.0.1/30 

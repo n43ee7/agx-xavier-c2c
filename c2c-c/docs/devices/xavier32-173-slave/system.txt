@@ -1,0 +1,28 @@
+## captured 2026-11-02T19:52:05-06:00
+xavier32
+# R35 (release), REVISION: 6.4, GCID: 43803471, BOARD: t186ref, EABI: aarch64, DATE: Tue Jan 27 08:01:21 UTC 2026
+Linux xavier32 5.10.216-tegra #1 SMP PREEMPT Mon Jan 26 23:28:09 PST 2026 aarch64 aarch64 aarch64 GNU/Linux
+MemTotal:       31734540 kB
+cuda-toolkit-11-4	11.4.19-1
+deepstream-6.3	6.3.0-1
+libcudnn8	8.6.0.166-1+cuda11.4
+tensorrt	8.5.2.2-1+cuda11.4
+vpi2-dev	2.4.8
+Version: 7.2.2
+NV Power Mode: MAXN
+{
+    "fan": {
+        "pwmfan": {
+            "profile": "cool"
+        }
+    },
+    "jetson_clocks": {
+        "boot": true
+    }
+}enabled
+enabled
+enabled
+enabled
+usb_f_c2c              28672  3
+/dev/mmcblk0p1   28G   21G  5.9G  78% /
+board ids: 2888-0004-400  2822-0000-700   (P2888-0004 = AGX Xavier 32 GB module)

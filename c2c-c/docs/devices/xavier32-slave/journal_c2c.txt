@@ -1,0 +1,522 @@
+-- Logs begin at Mon 2024-06-17 15:29:39 CDT, end at Mon 2026-11-02 12:50:28 CST. --
+Nov 01 16:18:13 xavier32 systemd[1]: Starting C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 01 16:18:13 xavier32 systemd[1]: Started C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 01 16:18:13 xavier32 c2cd[2362]: c2cd: slave node 'xavier32' started: interface c2c0 10.77.0.2/30 (peer 10.77.0.1), mtu 65000, device /dev/c2c0
+Nov 01 16:18:13 xavier32 c2cd[2362]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 16:18:28 xavier32 c2cd[2362]: c2cd: LINK DOWN: peer shut down
+Nov 01 16:18:46 xavier32 c2cd[2362]: c2cd: connection closed: USB link down
+Nov 01 16:18:46 xavier32 c2cd[2362]: c2cd: waiting for the master's USB host (cable / master powered?)
+Nov 01 16:19:10 xavier32 c2cd[2362]: c2cd: connection closed: USB link down
+Nov 01 16:19:11 xavier32 c2cd[2362]: c2cd: waiting for the master's USB host (cable / master powered?)
+Nov 01 16:19:25 xavier32 c2cd[2362]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 16:20:08 xavier32 c2cd[2362]: c2cd: connection closed: USB link down
+Nov 01 16:20:08 xavier32 c2cd[2362]: c2cd: LINK DOWN: connection closed
+Nov 01 16:20:08 xavier32 c2cd[2362]: c2cd: waiting for the master's USB host (cable / master powered?)
+Nov 01 16:20:12 xavier32 c2cd[2362]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 16:23:20 xavier32 c2cd[2362]: c2cd: LINK DOWN: peer shut down
+Nov 01 16:23:46 xavier32 systemd[1]: Stopping C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 01 16:23:46 xavier32 c2cd[2362]: c2cd: stopped
+Nov 01 16:23:46 xavier32 systemd[1]: c2cd.service: Succeeded.
+Nov 01 16:23:46 xavier32 systemd[1]: Stopped C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 01 16:26:43 xavier32 systemd[1]: Starting C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 01 16:26:43 xavier32 systemd[1]: Started C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 01 16:26:43 xavier32 c2cd[6400]: c2cd: slave node 'xavier32' started: interface c2c0 10.77.0.2/30 (peer 10.77.0.1), mtu 65000, device /dev/c2c0
+Nov 01 16:26:44 xavier32 c2cd[6400]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 18:44:52 xavier32 c2cd[6400]: c2cd: LINK DOWN: peer shut down
+Nov 01 18:45:51 xavier32 c2cd[6400]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 18:45:54 xavier32 systemd[1]: Stopping C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 01 18:45:54 xavier32 c2cd[6400]: c2cd: LINK DOWN: connection closed
+Nov 01 18:45:54 xavier32 c2cd[6400]: c2cd: stopped
+Nov 01 18:45:54 xavier32 systemd[1]: c2cd.service: Succeeded.
+Nov 01 18:45:54 xavier32 systemd[1]: Stopped C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 01 18:47:00 xavier32 systemd[1]: Starting C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 01 18:47:00 xavier32 systemd[1]: Started C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 01 18:47:00 xavier32 c2cd[7946]: c2cd: slave node 'xavier32' started: interface c2c0 10.77.0.2/30 (peer 10.77.0.1), mtu 65000, device /dev/c2c0
+Nov 01 18:47:00 xavier32 c2cd[7946]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 19:09:46 xavier32 c2cd[7946]: c2cd: LINK DOWN: peer shut down
+Nov 01 19:10:45 xavier32 c2cd[7946]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 19:10:49 xavier32 systemd[1]: Stopping C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 01 19:10:49 xavier32 c2cd[7946]: c2cd: LINK DOWN: connection closed
+Nov 01 19:10:49 xavier32 c2cd[7946]: c2cd: stopped
+Nov 01 19:10:49 xavier32 systemd[1]: c2cd.service: Succeeded.
+Nov 01 19:10:49 xavier32 systemd[1]: Stopped C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 01 19:11:54 xavier32 systemd[1]: Starting C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 01 19:11:54 xavier32 systemd[1]: Started C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 01 19:11:54 xavier32 c2cd[9614]: c2cd: slave node 'xavier32' started: interface c2c0 10.77.0.2/30 (peer 10.77.0.1), mtu 65000, device /dev/c2c0
+Nov 01 19:11:55 xavier32 c2cd[9614]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 19:36:29 xavier32 c2cd[9614]: c2cd: LINK DOWN: heartbeat lost
+Nov 01 19:38:12 xavier32 c2cd[9614]: c2cd: connection closed: USB link down
+Nov 01 19:38:12 xavier32 c2cd[9614]: c2cd: waiting for the master's USB host (cable / master powered?)
+Nov 01 19:38:33 xavier32 c2cd[9614]: c2cd: connection closed: USB link down
+Nov 01 19:38:34 xavier32 c2cd[9614]: c2cd: waiting for the master's USB host (cable / master powered?)
+Nov 01 19:38:47 xavier32 c2cd[9614]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 19:45:15 xavier32 c2cd[9614]: c2cd: LINK DOWN: peer shut down
+Nov 01 19:46:17 xavier32 c2cd[9614]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 20:14:10 xavier32 c2cd[9614]: c2cd: LINK DOWN: peer shut down
+Nov 01 20:16:15 xavier32 c2cd[9614]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 20:16:49 xavier32 c2cd[9614]: c2cd: LINK DOWN: peer shut down
+Nov 01 20:16:49 xavier32 c2cd[9614]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 20:17:35 xavier32 c2cd[9614]: c2cd: LINK DOWN: peer shut down
+Nov 01 20:18:41 xavier32 c2cd[9614]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 01 20:28:43 xavier32 c2cd[9614]: c2cd: LINK DOWN: peer shut down
+Nov 01 20:28:43 xavier32 c2cd[9614]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 04:35:24 xavier32 systemd[1]: Stopping C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 02 04:35:24 xavier32 c2cd[9614]: c2cd: LINK DOWN: connection closed
+Nov 02 04:35:24 xavier32 c2cd[9614]: c2cd: stopped
+Nov 02 04:35:24 xavier32 systemd[1]: c2cd.service: Succeeded.
+Nov 02 04:35:24 xavier32 systemd[1]: Stopped C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 02 04:37:13 xavier32 systemd[1]: Starting C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 02 04:37:13 xavier32 systemd[1]: Started C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 02 04:37:13 xavier32 c2cd[17375]: c2cd: slave node 'xavier32' started: interface c2c0 10.77.0.2/30 (peer 10.77.0.1), mtu 65000, device /dev/c2c0
+Nov 02 04:37:14 xavier32 c2cd[17375]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 04:37:16 xavier32 systemd[1]: Started C2C remote GPU server - lends this node's GPU to the C2C peer.
+Nov 02 04:37:16 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: lending GPU on 10.77.0.2:10810 (clients from 10.77.0.1, module cache /var/cache/c2c-gpud)
+Nov 02 04:37:34 xavier32 c2cd[17375]: c2cd: LINK DOWN: peer shut down
+Nov 02 04:39:31 xavier32 c2cd[17375]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 04:39:34 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:39:34 xavier32 c2c-gpud[17437]: c2c-gpud[17437]: client 10.77.0.1 connected
+Nov 02 04:39:34 xavier32 c2c-gpud[17437]: c2c-gpud[17437]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:39:34 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:48:11 xavier32 c2cd[17375]: c2cd: LINK DOWN: peer shut down
+Nov 02 04:48:11 xavier32 c2cd[17375]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 04:48:24 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:48:24 xavier32 c2c-gpud[17809]: c2c-gpud[17809]: client 10.77.0.1 connected
+Nov 02 04:48:24 xavier32 c2c-gpud[17809]: c2c-gpud[17809]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:48:24 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:48:24 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:48:24 xavier32 c2c-gpud[17811]: c2c-gpud[17811]: client 10.77.0.1 connected
+Nov 02 04:48:24 xavier32 c2c-gpud[17811]: c2c-gpud[17811]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:48:24 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:48:24 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:48:24 xavier32 c2c-gpud[17813]: c2c-gpud[17813]: client 10.77.0.1 connected
+Nov 02 04:48:25 xavier32 c2c-gpud[17813]: c2c-gpud[17813]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:48:34 xavier32 c2c-gpud[17813]: c2c-gpud[17813]: client 10.77.0.1 gone: 20509 launches, 1346.0 MiB in, 577.0 MiB out, 1 allocations still held
+Nov 02 04:48:39 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:48:44 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:48:44 xavier32 c2c-gpud[17819]: c2c-gpud[17819]: client 10.77.0.1 connected
+Nov 02 04:48:44 xavier32 c2c-gpud[17819]: c2c-gpud[17819]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:48:54 xavier32 c2c-gpud[17819]: c2c-gpud[17819]: client 10.77.0.1 gone: 20 launches, 0.0 MiB in, 0.0 MiB out, 4 allocations still held
+Nov 02 04:48:55 xavier32 c2c-gpud[17822]: c2c-gpud[17822]: client 10.77.0.1 connected
+Nov 02 04:48:55 xavier32 c2c-gpud[17822]: c2c-gpud[17822]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:48:55 xavier32 c2c-gpud[17824]: c2c-gpud[17824]: client 10.77.0.1 connected
+Nov 02 04:48:55 xavier32 c2c-gpud[17824]: c2c-gpud[17824]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:49:16 xavier32 c2c-gpud[17824]: c2c-gpud[17824]: client 10.77.0.1 gone: 20510 launches, 2370.0 MiB in, 1089.0 MiB out, 1 allocations still held
+Nov 02 04:49:16 xavier32 c2c-gpud[17826]: c2c-gpud[17826]: client 10.77.0.1 connected
+Nov 02 04:49:16 xavier32 c2c-gpud[17826]: c2c-gpud[17826]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:49:18 xavier32 c2c-gpud[17826]: c2c-gpud[17826]: client 10.77.0.1 gone: 1 launches, 64.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:49:18 xavier32 c2c-gpud[17828]: c2c-gpud[17828]: client 10.77.0.1 connected
+Nov 02 04:49:18 xavier32 c2c-gpud[17828]: c2c-gpud[17828]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:49:18 xavier32 c2c-gpud[17828]: c2c-gpud[17828]: client 10.77.0.1 gone: 2 launches, 0.1 MiB in, 0.1 MiB out, 1 allocations still held
+Nov 02 04:49:19 xavier32 c2c-gpud[17830]: c2c-gpud[17830]: client 10.77.0.1 connected
+Nov 02 04:49:19 xavier32 c2c-gpud[17830]: c2c-gpud[17830]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:49:19 xavier32 c2c-gpud[17830]: c2c-gpud[17830]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:49:19 xavier32 c2c-gpud[17833]: c2c-gpud[17833]: client 10.77.0.1 connected
+Nov 02 04:49:19 xavier32 c2c-gpud[17833]: c2c-gpud[17833]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:49:22 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:50:15 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:50:15 xavier32 c2c-gpud[17837]: c2c-gpud[17837]: client 10.77.0.1 connected
+Nov 02 04:50:15 xavier32 c2c-gpud[17837]: c2c-gpud[17837]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:50:15 xavier32 c2c-gpud[17837]: c2c-gpud[17837]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:50:15 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:50:15 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:50:15 xavier32 c2c-gpud[17839]: c2c-gpud[17839]: client 10.77.0.1 connected
+Nov 02 04:50:15 xavier32 c2c-gpud[17839]: c2c-gpud[17839]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:50:15 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:50:16 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:50:16 xavier32 c2c-gpud[17841]: c2c-gpud[17841]: client 10.77.0.1 connected
+Nov 02 04:50:16 xavier32 c2c-gpud[17841]: c2c-gpud[17841]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:50:30 xavier32 c2c-gpud[17841]: c2c-gpud[17841]: client 10.77.0.1 gone: 0 launches, 3112.8 MiB in, 3051.8 MiB out, 0 allocations still held
+Nov 02 04:50:30 xavier32 c2c-gpud[17844]: c2c-gpud[17844]: client 10.77.0.1 connected
+Nov 02 04:50:31 xavier32 c2c-gpud[17844]: c2c-gpud[17844]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:50:31 xavier32 c2c-gpud[17844]: c2c-gpud[17844]: client 10.77.0.1 gone: 1 launches, 0.4 MiB in, 0.2 MiB out, 1 allocations still held
+Nov 02 04:50:31 xavier32 c2c-gpud[17846]: c2c-gpud[17846]: client 10.77.0.1 connected
+Nov 02 04:50:31 xavier32 c2c-gpud[17846]: c2c-gpud[17846]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:50:31 xavier32 c2c-gpud[17846]: c2c-gpud[17846]: client 10.77.0.1 gone: 1 launches, 0.4 MiB in, 0.2 MiB out, 1 allocations still held
+Nov 02 04:50:31 xavier32 c2c-gpud[17848]: c2c-gpud[17848]: client 10.77.0.1 connected
+Nov 02 04:50:31 xavier32 c2c-gpud[17848]: c2c-gpud[17848]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:50:31 xavier32 c2c-gpud[17848]: c2c-gpud[17848]: client 10.77.0.1 gone: 301 launches, 1.2 MiB in, 0.8 MiB out, 1 allocations still held
+Nov 02 04:50:32 xavier32 c2c-gpud[17850]: c2c-gpud[17850]: client 10.77.0.1 connected
+Nov 02 04:50:32 xavier32 c2c-gpud[17850]: c2c-gpud[17850]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:50:32 xavier32 c2c-gpud[17850]: c2c-gpud[17850]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:50:32 xavier32 c2c-gpud[17852]: c2c-gpud[17852]: client 10.77.0.1 connected
+Nov 02 04:50:32 xavier32 c2c-gpud[17852]: c2c-gpud[17852]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:50:34 xavier32 c2c-gpud[17852]: c2c-gpud[17852]: client 10.77.0.1 gone: 1 launches, 128.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:50:34 xavier32 c2c-gpud[17854]: c2c-gpud[17854]: client 10.77.0.1 connected
+Nov 02 04:50:34 xavier32 c2c-gpud[17854]: c2c-gpud[17854]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:04 xavier32 c2c-gpud[17854]: c2c-gpud[17854]: client 10.77.0.1 gone: 501 launches, 0.0 MiB in, 12864.0 MiB out, 1 allocations still held
+Nov 02 04:51:04 xavier32 c2c-gpud[17856]: c2c-gpud[17856]: client 10.77.0.1 connected
+Nov 02 04:51:04 xavier32 c2c-gpud[17856]: c2c-gpud[17856]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:05 xavier32 c2c-gpud[17856]: c2c-gpud[17856]: client 10.77.0.1 gone: 1 launches, 64.0 MiB in, 64.0 MiB out, 0 allocations still held
+Nov 02 04:51:05 xavier32 c2c-gpud[17858]: c2c-gpud[17858]: client 10.77.0.1 connected
+Nov 02 04:51:05 xavier32 c2c-gpud[17858]: c2c-gpud[17858]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:05 xavier32 c2c-gpud[17858]: c2c-gpud[17858]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:05 xavier32 c2c-gpud[17860]: c2c-gpud[17860]: client 10.77.0.1 connected
+Nov 02 04:51:05 xavier32 c2c-gpud[17860]: c2c-gpud[17860]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:05 xavier32 c2c-gpud[17860]: c2c-gpud[17860]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:06 xavier32 c2c-gpud[17862]: c2c-gpud[17862]: client 10.77.0.1 connected
+Nov 02 04:51:06 xavier32 c2c-gpud[17862]: c2c-gpud[17862]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:06 xavier32 c2c-gpud[17862]: c2c-gpud[17862]: client 10.77.0.1 gone: 2 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:06 xavier32 c2c-gpud[17864]: c2c-gpud[17864]: client 10.77.0.1 connected
+Nov 02 04:51:06 xavier32 c2c-gpud[17864]: c2c-gpud[17864]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:06 xavier32 c2c-gpud[17864]: c2c-gpud[17864]: client 10.77.0.1 gone: 8 launches, 3.1 MiB in, 3.1 MiB out, 1 allocations still held
+Nov 02 04:51:06 xavier32 c2c-gpud[17866]: c2c-gpud[17866]: client 10.77.0.1 connected
+Nov 02 04:51:07 xavier32 c2c-gpud[17866]: c2c-gpud[17866]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:07 xavier32 c2c-gpud[17866]: c2c-gpud[17866]: client 10.77.0.1 gone: 2 launches, 7.6 MiB in, 7.6 MiB out, 0 allocations still held
+Nov 02 04:51:07 xavier32 c2c-gpud[17868]: c2c-gpud[17868]: client 10.77.0.1 connected
+Nov 02 04:51:07 xavier32 c2c-gpud[17868]: c2c-gpud[17868]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:07 xavier32 c2c-gpud[17868]: c2c-gpud[17868]: client 10.77.0.1 gone: 2 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:07 xavier32 c2c-gpud[17870]: c2c-gpud[17870]: client 10.77.0.1 connected
+Nov 02 04:51:07 xavier32 c2c-gpud[17870]: c2c-gpud[17870]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:07 xavier32 c2c-gpud[17870]: c2c-gpud[17870]: client 10.77.0.1 gone: 3 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:08 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:51:08 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:51:08 xavier32 c2c-gpud[17872]: c2c-gpud[17872]: client 10.77.0.1 connected
+Nov 02 04:51:08 xavier32 c2c-gpud[17872]: c2c-gpud[17872]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:10 xavier32 c2c-gpud[17872]: c2c-gpud[17872]: client 10.77.0.1 gone: 22 launches, 336.0 MiB in, 336.0 MiB out, 0 allocations still held
+Nov 02 04:51:10 xavier32 c2c-gpud[17874]: c2c-gpud[17874]: client 10.77.0.1 connected
+Nov 02 04:51:10 xavier32 c2c-gpud[17874]: c2c-gpud[17874]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:10 xavier32 c2c-gpud[17874]: c2c-gpud[17874]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]: c2c-gpud[17876]: client 10.77.0.1 connected
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]: c2c-gpud[17876]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]:  Sum of all ranks 0..63 in threadBlockGroup is 2016 (expected 2016)
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]:  Now creating 4 groups, each of size 16 threads:
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]:    Sum of all ranks 0..15 in this tiledPartition16 group is 120 (expected 120)
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]:    Sum of all ranks 0..15 in this tiledPartition16 group is 120 (expected 120)
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]:    Sum of all ranks 0..15 in this tiledPartition16 group is 120 (expected 120)
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]:    Sum of all ranks 0..15 in this tiledPartition16 group is 120 (expected 120)
+Nov 02 04:51:10 xavier32 c2c-gpud[17876]: c2c-gpud[17876]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:51:11 xavier32 c2c-gpud[17878]: c2c-gpud[17878]: client 10.77.0.1 connected
+Nov 02 04:51:11 xavier32 c2c-gpud[17878]: c2c-gpud[17878]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:11 xavier32 c2c-gpud[17878]: c2c-gpud[17878]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:51:11 xavier32 c2c-gpud[17880]: c2c-gpud[17880]: client 10.77.0.1 connected
+Nov 02 04:51:11 xavier32 c2c-gpud[17880]: c2c-gpud[17880]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:11 xavier32 c2c-gpud[17880]: c2c-gpud[17880]: client 10.77.0.1 gone: 2 launches, 0.0 MiB in, 1.0 MiB out, 1 allocations still held
+Nov 02 04:51:12 xavier32 c2c-gpud[17882]: c2c-gpud[17882]: client 10.77.0.1 connected
+Nov 02 04:51:12 xavier32 c2c-gpud[17882]: c2c-gpud[17882]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:12 xavier32 c2c-gpud[17882]: c2c-gpud[17882]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:12 xavier32 c2c-gpud[17884]: c2c-gpud[17884]: client 10.77.0.1 connected
+Nov 02 04:51:12 xavier32 c2c-gpud[17884]: c2c-gpud[17884]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:13 xavier32 c2c-gpud[17884]: c2c-gpud[17884]: client 10.77.0.1 gone: 1 launches, 76.3 MiB in, 38.1 MiB out, 1 allocations still held
+Nov 02 04:51:13 xavier32 c2c-gpud[17886]: c2c-gpud[17886]: client 10.77.0.1 connected
+Nov 02 04:51:13 xavier32 c2c-gpud[17886]: c2c-gpud[17886]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:14 xavier32 c2c-gpud[17886]: c2c-gpud[17886]: client 10.77.0.1 gone: 201 launches, 64.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:14 xavier32 c2c-gpud[17888]: c2c-gpud[17888]: client 10.77.0.1 connected
+Nov 02 04:51:14 xavier32 c2c-gpud[17888]: c2c-gpud[17888]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:17 xavier32 c2c-gpud[17888]: c2c-gpud[17888]: client 10.77.0.1 gone: 3300 launches, 26.0 MiB in, 442.0 MiB out, 1 allocations still held
+Nov 02 04:51:17 xavier32 c2c-gpud[17890]: c2c-gpud[17890]: client 10.77.0.1 connected
+Nov 02 04:51:17 xavier32 c2c-gpud[17890]: c2c-gpud[17890]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:17 xavier32 c2c-gpud[17890]: c2c-gpud[17890]: client 10.77.0.1 gone: 808 launches, 4.0 MiB in, 64.0 MiB out, 0 allocations still held
+Nov 02 04:51:18 xavier32 c2c-gpud[17892]: c2c-gpud[17892]: client 10.77.0.1 connected
+Nov 02 04:51:18 xavier32 c2c-gpud[17892]: c2c-gpud[17892]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:18 xavier32 c2c-gpud[17892]: c2c-gpud[17892]: client 10.77.0.1 gone: 101 launches, 4.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:18 xavier32 c2c-gpud[17894]: c2c-gpud[17894]: client 10.77.0.1 connected
+Nov 02 04:51:18 xavier32 c2c-gpud[17894]: c2c-gpud[17894]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:19 xavier32 c2c-gpud[17894]: c2c-gpud[17894]: client 10.77.0.1 gone: 49 launches, 32.0 MiB in, 32.0 MiB out, 1 allocations still held
+Nov 02 04:51:19 xavier32 c2c-gpud[17896]: c2c-gpud[17896]: client 10.77.0.1 connected
+Nov 02 04:51:19 xavier32 c2c-gpud[17896]: c2c-gpud[17896]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:22 xavier32 c2c-gpud[17896]: c2c-gpud[17896]: client 10.77.0.1 gone: 290 launches, 8.0 MiB in, 120.0 MiB out, 0 allocations still held
+Nov 02 04:51:22 xavier32 c2c-gpud[17898]: c2c-gpud[17898]: client 10.77.0.1 connected
+Nov 02 04:51:23 xavier32 c2c-gpud[17898]: c2c-gpud[17898]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:25 xavier32 c2c-gpud[17898]: c2c-gpud[17898]: client 10.77.0.1 gone: 22 launches, 32.0 MiB in, 32.0 MiB out, 0 allocations still held
+Nov 02 04:51:25 xavier32 c2c-gpud[17900]: c2c-gpud[17900]: client 10.77.0.1 connected
+Nov 02 04:51:25 xavier32 c2c-gpud[17900]: c2c-gpud[17900]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:25 xavier32 c2c-gpud[17900]: c2c-gpud[17900]: client 10.77.0.1 gone: 5 launches, 0.2 MiB in, 16.1 MiB out, 1 allocations still held
+Nov 02 04:51:26 xavier32 c2c-gpud[17902]: c2c-gpud[17902]: client 10.77.0.1 connected
+Nov 02 04:51:26 xavier32 c2c-gpud[17902]: c2c-gpud[17902]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:26 xavier32 c2c-gpud[17902]: c2c-gpud[17902]: client 10.77.0.1 gone: 9 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:26 xavier32 c2c-gpud[17904]: c2c-gpud[17904]: client 10.77.0.1 connected
+Nov 02 04:51:26 xavier32 c2c-gpud[17904]: c2c-gpud[17904]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:28 xavier32 c2c-gpud[17904]: c2c-gpud[17904]: client 10.77.0.1 gone: 512 launches, 45.8 MiB in, 30.5 MiB out, 0 allocations still held
+Nov 02 04:51:28 xavier32 c2c-gpud[17906]: c2c-gpud[17906]: client 10.77.0.1 connected
+Nov 02 04:51:28 xavier32 c2c-gpud[17906]: c2c-gpud[17906]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:32 xavier32 c2c-gpud[17906]: c2c-gpud[17906]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:51:32 xavier32 c2c-gpud[17908]: c2c-gpud[17908]: client 10.77.0.1 connected
+Nov 02 04:51:32 xavier32 c2c-gpud[17908]: c2c-gpud[17908]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:32 xavier32 c2c-gpud[17908]: c2c-gpud[17908]: client 10.77.0.1 gone: 2 launches, 0.1 MiB in, 0.1 MiB out, 1 allocations still held
+Nov 02 04:51:33 xavier32 c2c-gpud[17910]: c2c-gpud[17910]: client 10.77.0.1 connected
+Nov 02 04:51:33 xavier32 c2c-gpud[17910]: c2c-gpud[17910]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:34 xavier32 c2c-gpud[17910]: c2c-gpud[17910]: client 10.77.0.1 gone: 42 launches, 0.0 MiB in, 24.0 MiB out, 0 allocations still held
+Nov 02 04:51:34 xavier32 c2c-gpud[17912]: c2c-gpud[17912]: client 10.77.0.1 connected
+Nov 02 04:51:34 xavier32 c2c-gpud[17912]: c2c-gpud[17912]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:34 xavier32 c2c-gpud[17912]: c2c-gpud[17912]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 38.1 MiB out, 1 allocations still held
+Nov 02 04:51:35 xavier32 c2c-gpud[17914]: c2c-gpud[17914]: client 10.77.0.1 connected
+Nov 02 04:51:35 xavier32 c2c-gpud[17914]: c2c-gpud[17914]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:37 xavier32 c2c-gpud[17914]: c2c-gpud[17914]: client 10.77.0.1 gone: 34 launches, 36.0 MiB in, 36.0 MiB out, 0 allocations still held
+Nov 02 04:51:37 xavier32 c2c-gpud[17916]: c2c-gpud[17916]: client 10.77.0.1 connected
+Nov 02 04:51:37 xavier32 c2c-gpud[17916]: c2c-gpud[17916]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:39 xavier32 c2c-gpud[17916]: c2c-gpud[17916]: client 10.77.0.1 gone: 68 launches, 64.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:39 xavier32 c2c-gpud[17918]: c2c-gpud[17918]: client 10.77.0.1 connected
+Nov 02 04:51:39 xavier32 c2c-gpud[17918]: c2c-gpud[17918]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:39 xavier32 c2c-gpud[17918]: c2c-gpud[17918]: client 10.77.0.1 gone: 118 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:40 xavier32 c2c-gpud[17920]: c2c-gpud[17920]: client 10.77.0.1 connected
+Nov 02 04:51:40 xavier32 c2c-gpud[17920]: c2c-gpud[17920]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:40 xavier32 c2c-gpud[17920]: c2c-gpud[17920]: client 10.77.0.1 gone: 3 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:40 xavier32 c2c-gpud[17922]: c2c-gpud[17922]: client 10.77.0.1 connected
+Nov 02 04:51:40 xavier32 c2c-gpud[17922]: c2c-gpud[17922]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:43 xavier32 c2c-gpud[17922]: c2c-gpud[17922]: client 10.77.0.1 gone: 1 launches, 0.9 MiB in, 0.3 MiB out, 1 allocations still held
+Nov 02 04:51:43 xavier32 c2c-gpud[17924]: c2c-gpud[17924]: client 10.77.0.1 connected
+Nov 02 04:51:43 xavier32 c2c-gpud[17924]: c2c-gpud[17924]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:46 xavier32 c2c-gpud[17924]: c2c-gpud[17924]: client 10.77.0.1 gone: 63 launches, 17.4 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:51:46 xavier32 c2c-gpud[17926]: c2c-gpud[17926]: client 10.77.0.1 connected
+Nov 02 04:51:46 xavier32 c2c-gpud[17926]: c2c-gpud[17926]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:47 xavier32 c2c-gpud[17926]: c2c-gpud[17926]: client 10.77.0.1 gone: 4 launches, 2.3 MiB in, 0.0 MiB out, 2 allocations still held
+Nov 02 04:51:48 xavier32 c2c-gpud[17928]: c2c-gpud[17928]: client 10.77.0.1 connected
+Nov 02 04:51:48 xavier32 c2c-gpud[17928]: c2c-gpud[17928]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:49 xavier32 c2c-gpud[17928]: c2c-gpud[17928]: client 10.77.0.1 gone: 84 launches, 36.0 MiB in, 4.0 MiB out, 1 allocations still held
+Nov 02 04:51:49 xavier32 c2c-gpud[17930]: c2c-gpud[17930]: client 10.77.0.1 connected
+Nov 02 04:51:49 xavier32 c2c-gpud[17930]: c2c-gpud[17930]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:51:50 xavier32 c2c-gpud[17930]: c2c-gpud[17930]: client 10.77.0.1 gone: 43 launches, 1.5 MiB in, 9.2 MiB out, 1 allocations still held
+Nov 02 04:51:50 xavier32 c2c-gpud[17932]: c2c-gpud[17932]: client 10.77.0.1 connected
+Nov 02 04:51:50 xavier32 c2c-gpud[17932]: c2c-gpud[17932]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:52:03 xavier32 c2c-gpud[17932]: c2c-gpud[17932]: client 10.77.0.1 gone: 4096 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:52:03 xavier32 c2c-gpud[17936]: c2c-gpud[17936]: client 10.77.0.1 connected
+Nov 02 04:52:03 xavier32 c2c-gpud[17936]: c2c-gpud[17936]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:52:04 xavier32 c2c-gpud[17936]: c2c-gpud[17936]: client 10.77.0.1 gone: 6 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 04:52:08 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:52:33 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:52:33 xavier32 c2c-gpud[17985]: c2c-gpud[17985]: client 10.77.0.1 connected
+Nov 02 04:52:33 xavier32 c2c-gpud[17985]: c2c-gpud[17985]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 04:52:33 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 04:52:33 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 04:52:33 xavier32 c2c-gpud[17987]: c2c-gpud[17987]: client 10.77.0.1 connected
+Nov 02 04:52:33 xavier32 c2c-gpud[17987]: c2c-gpud[17987]: device-address window 0x991000000 + 35 GiB
+Nov 02 04:52:36 xavier32 c2cd[17375]: c2cd: LINK DOWN: peer shut down
+Nov 02 04:52:36 xavier32 c2cd[17375]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 04:52:44 xavier32 c2c-gpud[17987]: c2c-gpud[17987]: client 10.77.0.1 gone: 20509 launches, 1346.0 MiB in, 577.0 MiB out, 1 allocations still held
+Nov 02 04:52:48 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 05:18:44 xavier32 systemd[1]: Stopping C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 02 05:18:44 xavier32 c2cd[17375]: c2cd: LINK DOWN: connection closed
+Nov 02 05:18:44 xavier32 c2cd[17375]: c2cd: stopped
+Nov 02 05:18:44 xavier32 systemd[1]: c2cd.service: Succeeded.
+Nov 02 05:18:44 xavier32 systemd[1]: Stopped C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 02 05:18:44 xavier32 systemd[1]: Starting C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 02 05:18:44 xavier32 systemd[1]: Started C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 02 05:18:44 xavier32 c2cd[19054]: c2cd: slave node 'xavier32' started: interface c2c0 10.77.0.2/30 (peer 10.77.0.1), mtu 65000, device /dev/c2c0
+Nov 02 05:18:45 xavier32 c2cd[19054]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 05:18:53 xavier32 c2cd[19054]: c2cd: LINK DOWN: peer shut down
+Nov 02 05:18:54 xavier32 c2cd[19054]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 05:19:03 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating off while serving (was 1)
+Nov 02 05:19:03 xavier32 c2c-gpud[19116]: c2c-gpud[19116]: client 10.77.0.1 connected
+Nov 02 05:19:03 xavier32 c2c-gpud[19116]: c2c-gpud[19116]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:19:14 xavier32 c2c-gpud[19116]: c2c-gpud[19116]: client 10.77.0.1 gone: 20509 launches, 1346.0 MiB in, 577.0 MiB out, 1 allocations still held
+Nov 02 05:19:19 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: GPU power gating restored (1)
+Nov 02 05:19:55 xavier32 c2c-gpud[17427]: c2c-gpud[17427]: stopped
+Nov 02 05:19:55 xavier32 systemd[1]: Stopping C2C remote GPU server - lends this node's GPU to the C2C peer...
+Nov 02 05:19:55 xavier32 systemd[1]: c2c-gpud.service: Succeeded.
+Nov 02 05:19:55 xavier32 systemd[1]: Stopped C2C remote GPU server - lends this node's GPU to the C2C peer.
+Nov 02 05:19:55 xavier32 systemd[1]: Stopping C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 02 05:19:55 xavier32 c2cd[19054]: c2cd: LINK DOWN: connection closed
+Nov 02 05:19:55 xavier32 c2cd[19054]: c2cd: stopped
+Nov 02 05:19:55 xavier32 systemd[1]: c2cd.service: Succeeded.
+Nov 02 05:19:55 xavier32 systemd[1]: Stopped C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 02 05:21:41 xavier32 systemd[1]: Starting C2C link daemon (slave) - keyed USB link to the peer Jetson...
+Nov 02 05:21:41 xavier32 systemd[1]: Started C2C link daemon (slave) - keyed USB link to the peer Jetson.
+Nov 02 05:21:41 xavier32 c2cd[19976]: c2cd: slave node 'xavier32' started: interface c2c0 10.77.0.2/30 (peer 10.77.0.1), mtu 65000, device /dev/c2c0
+Nov 02 05:21:41 xavier32 c2cd[19976]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 05:21:44 xavier32 systemd[1]: Started C2C remote GPU server - lends this node's GPU to the C2C peer.
+Nov 02 05:21:44 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: lending GPU on 10.77.0.2:10810 (clients from 10.77.0.1, module cache /var/cache/c2c-gpud)
+Nov 02 05:21:47 xavier32 c2cd[19976]: c2cd: LINK DOWN: peer shut down
+Nov 02 05:23:45 xavier32 c2cd[19976]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 05:32:15 xavier32 c2cd[19976]: c2cd: LINK DOWN: peer shut down
+Nov 02 05:32:15 xavier32 c2cd[19976]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 05:32:27 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating off while serving (was 1)
+Nov 02 05:32:28 xavier32 c2c-gpud[20385]: c2c-gpud[20385]: client 10.77.0.1 connected
+Nov 02 05:32:28 xavier32 c2c-gpud[20385]: c2c-gpud[20385]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:32:28 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating restored (1)
+Nov 02 05:32:28 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating off while serving (was 1)
+Nov 02 05:32:28 xavier32 c2c-gpud[20387]: c2c-gpud[20387]: client 10.77.0.1 connected
+Nov 02 05:32:28 xavier32 c2c-gpud[20387]: c2c-gpud[20387]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:32:28 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating restored (1)
+Nov 02 05:32:28 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating off while serving (was 1)
+Nov 02 05:32:28 xavier32 c2c-gpud[20389]: c2c-gpud[20389]: client 10.77.0.1 connected
+Nov 02 05:32:28 xavier32 c2c-gpud[20389]: c2c-gpud[20389]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:32:38 xavier32 c2c-gpud[20389]: c2c-gpud[20389]: client 10.77.0.1 gone: 20509 launches, 1346.0 MiB in, 577.0 MiB out, 1 allocations still held
+Nov 02 05:32:43 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating restored (1)
+Nov 02 05:32:48 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating off while serving (was 1)
+Nov 02 05:32:48 xavier32 c2c-gpud[20395]: c2c-gpud[20395]: client 10.77.0.1 connected
+Nov 02 05:32:48 xavier32 c2c-gpud[20395]: c2c-gpud[20395]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:32:58 xavier32 c2c-gpud[20395]: c2c-gpud[20395]: client 10.77.0.1 gone: 20 launches, 0.0 MiB in, 0.0 MiB out, 4 allocations still held
+Nov 02 05:32:58 xavier32 c2c-gpud[20398]: c2c-gpud[20398]: client 10.77.0.1 connected
+Nov 02 05:32:58 xavier32 c2c-gpud[20398]: c2c-gpud[20398]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:32:59 xavier32 c2c-gpud[20400]: c2c-gpud[20400]: client 10.77.0.1 connected
+Nov 02 05:32:59 xavier32 c2c-gpud[20400]: c2c-gpud[20400]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:33:19 xavier32 c2c-gpud[20400]: c2c-gpud[20400]: client 10.77.0.1 gone: 20510 launches, 2370.0 MiB in, 1089.0 MiB out, 1 allocations still held
+Nov 02 05:33:20 xavier32 c2c-gpud[20402]: c2c-gpud[20402]: client 10.77.0.1 connected
+Nov 02 05:33:20 xavier32 c2c-gpud[20402]: c2c-gpud[20402]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:33:21 xavier32 c2c-gpud[20402]: c2c-gpud[20402]: client 10.77.0.1 gone: 1 launches, 64.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:33:21 xavier32 c2c-gpud[20404]: c2c-gpud[20404]: client 10.77.0.1 connected
+Nov 02 05:33:22 xavier32 c2c-gpud[20404]: c2c-gpud[20404]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:33:22 xavier32 c2c-gpud[20404]: c2c-gpud[20404]: client 10.77.0.1 gone: 2 launches, 0.1 MiB in, 0.1 MiB out, 1 allocations still held
+Nov 02 05:33:22 xavier32 c2c-gpud[20406]: c2c-gpud[20406]: client 10.77.0.1 connected
+Nov 02 05:33:22 xavier32 c2c-gpud[20406]: c2c-gpud[20406]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:33:22 xavier32 c2c-gpud[20406]: c2c-gpud[20406]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:33:23 xavier32 c2c-gpud[20409]: c2c-gpud[20409]: client 10.77.0.1 connected
+Nov 02 05:33:23 xavier32 c2c-gpud[20409]: c2c-gpud[20409]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:33:25 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating restored (1)
+Nov 02 05:34:19 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating off while serving (was 1)
+Nov 02 05:34:19 xavier32 c2c-gpud[20411]: c2c-gpud[20411]: client 10.77.0.1 connected
+Nov 02 05:34:19 xavier32 c2c-gpud[20411]: c2c-gpud[20411]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:34:19 xavier32 c2c-gpud[20411]: c2c-gpud[20411]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:34:19 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating restored (1)
+Nov 02 05:34:19 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating off while serving (was 1)
+Nov 02 05:34:19 xavier32 c2c-gpud[20413]: c2c-gpud[20413]: client 10.77.0.1 connected
+Nov 02 05:34:19 xavier32 c2c-gpud[20413]: c2c-gpud[20413]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:34:19 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating restored (1)
+Nov 02 05:34:20 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating off while serving (was 1)
+Nov 02 05:34:20 xavier32 c2c-gpud[20415]: c2c-gpud[20415]: client 10.77.0.1 connected
+Nov 02 05:34:20 xavier32 c2c-gpud[20415]: c2c-gpud[20415]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:34:34 xavier32 c2c-gpud[20415]: c2c-gpud[20415]: client 10.77.0.1 gone: 0 launches, 3112.8 MiB in, 3051.8 MiB out, 0 allocations still held
+Nov 02 05:34:34 xavier32 c2c-gpud[20418]: c2c-gpud[20418]: client 10.77.0.1 connected
+Nov 02 05:34:35 xavier32 c2c-gpud[20418]: c2c-gpud[20418]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:34:35 xavier32 c2c-gpud[20418]: c2c-gpud[20418]: client 10.77.0.1 gone: 1 launches, 0.4 MiB in, 0.2 MiB out, 1 allocations still held
+Nov 02 05:34:35 xavier32 c2c-gpud[20420]: c2c-gpud[20420]: client 10.77.0.1 connected
+Nov 02 05:34:35 xavier32 c2c-gpud[20420]: c2c-gpud[20420]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:34:35 xavier32 c2c-gpud[20420]: c2c-gpud[20420]: client 10.77.0.1 gone: 1 launches, 0.4 MiB in, 0.2 MiB out, 1 allocations still held
+Nov 02 05:34:35 xavier32 c2c-gpud[20422]: c2c-gpud[20422]: client 10.77.0.1 connected
+Nov 02 05:34:35 xavier32 c2c-gpud[20422]: c2c-gpud[20422]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:34:35 xavier32 c2c-gpud[20422]: c2c-gpud[20422]: client 10.77.0.1 gone: 301 launches, 1.2 MiB in, 0.8 MiB out, 1 allocations still held
+Nov 02 05:34:36 xavier32 c2c-gpud[20424]: c2c-gpud[20424]: client 10.77.0.1 connected
+Nov 02 05:34:36 xavier32 c2c-gpud[20424]: c2c-gpud[20424]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:34:36 xavier32 c2c-gpud[20424]: c2c-gpud[20424]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:34:36 xavier32 c2c-gpud[20426]: c2c-gpud[20426]: client 10.77.0.1 connected
+Nov 02 05:34:36 xavier32 c2c-gpud[20426]: c2c-gpud[20426]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:34:38 xavier32 c2c-gpud[20426]: c2c-gpud[20426]: client 10.77.0.1 gone: 1 launches, 128.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:34:38 xavier32 c2c-gpud[20428]: c2c-gpud[20428]: client 10.77.0.1 connected
+Nov 02 05:34:38 xavier32 c2c-gpud[20428]: c2c-gpud[20428]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:08 xavier32 c2c-gpud[20428]: c2c-gpud[20428]: client 10.77.0.1 gone: 501 launches, 0.0 MiB in, 12864.0 MiB out, 1 allocations still held
+Nov 02 05:35:08 xavier32 c2c-gpud[20430]: c2c-gpud[20430]: client 10.77.0.1 connected
+Nov 02 05:35:08 xavier32 c2c-gpud[20430]: c2c-gpud[20430]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:09 xavier32 c2c-gpud[20430]: c2c-gpud[20430]: client 10.77.0.1 gone: 1 launches, 64.0 MiB in, 64.0 MiB out, 0 allocations still held
+Nov 02 05:35:09 xavier32 c2c-gpud[20432]: c2c-gpud[20432]: client 10.77.0.1 connected
+Nov 02 05:35:09 xavier32 c2c-gpud[20432]: c2c-gpud[20432]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:09 xavier32 c2c-gpud[20432]: c2c-gpud[20432]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:09 xavier32 c2c-gpud[20434]: c2c-gpud[20434]: client 10.77.0.1 connected
+Nov 02 05:35:09 xavier32 c2c-gpud[20434]: c2c-gpud[20434]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:09 xavier32 c2c-gpud[20434]: c2c-gpud[20434]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:10 xavier32 c2c-gpud[20436]: c2c-gpud[20436]: client 10.77.0.1 connected
+Nov 02 05:35:10 xavier32 c2c-gpud[20436]: c2c-gpud[20436]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:10 xavier32 c2c-gpud[20436]: c2c-gpud[20436]: client 10.77.0.1 gone: 2 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:10 xavier32 c2c-gpud[20438]: c2c-gpud[20438]: client 10.77.0.1 connected
+Nov 02 05:35:10 xavier32 c2c-gpud[20438]: c2c-gpud[20438]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:10 xavier32 c2c-gpud[20438]: c2c-gpud[20438]: client 10.77.0.1 gone: 8 launches, 3.1 MiB in, 3.1 MiB out, 1 allocations still held
+Nov 02 05:35:10 xavier32 c2c-gpud[20440]: c2c-gpud[20440]: client 10.77.0.1 connected
+Nov 02 05:35:10 xavier32 c2c-gpud[20440]: c2c-gpud[20440]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:11 xavier32 c2c-gpud[20440]: c2c-gpud[20440]: client 10.77.0.1 gone: 2 launches, 7.6 MiB in, 7.6 MiB out, 0 allocations still held
+Nov 02 05:35:11 xavier32 c2c-gpud[20442]: c2c-gpud[20442]: client 10.77.0.1 connected
+Nov 02 05:35:11 xavier32 c2c-gpud[20442]: c2c-gpud[20442]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:11 xavier32 c2c-gpud[20442]: c2c-gpud[20442]: client 10.77.0.1 gone: 2 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:11 xavier32 c2c-gpud[20444]: c2c-gpud[20444]: client 10.77.0.1 connected
+Nov 02 05:35:11 xavier32 c2c-gpud[20444]: c2c-gpud[20444]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:11 xavier32 c2c-gpud[20444]: c2c-gpud[20444]: client 10.77.0.1 gone: 3 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:12 xavier32 c2c-gpud[20446]: c2c-gpud[20446]: client 10.77.0.1 connected
+Nov 02 05:35:12 xavier32 c2c-gpud[20446]: c2c-gpud[20446]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:14 xavier32 c2c-gpud[20446]: c2c-gpud[20446]: client 10.77.0.1 gone: 22 launches, 336.0 MiB in, 336.0 MiB out, 0 allocations still held
+Nov 02 05:35:14 xavier32 c2c-gpud[20448]: c2c-gpud[20448]: client 10.77.0.1 connected
+Nov 02 05:35:14 xavier32 c2c-gpud[20448]: c2c-gpud[20448]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:14 xavier32 c2c-gpud[20448]: c2c-gpud[20448]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]: c2c-gpud[20450]: client 10.77.0.1 connected
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]: c2c-gpud[20450]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]:  Sum of all ranks 0..63 in threadBlockGroup is 2016 (expected 2016)
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]:  Now creating 4 groups, each of size 16 threads:
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]:    Sum of all ranks 0..15 in this tiledPartition16 group is 120 (expected 120)
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]:    Sum of all ranks 0..15 in this tiledPartition16 group is 120 (expected 120)
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]:    Sum of all ranks 0..15 in this tiledPartition16 group is 120 (expected 120)
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]:    Sum of all ranks 0..15 in this tiledPartition16 group is 120 (expected 120)
+Nov 02 05:35:14 xavier32 c2c-gpud[20450]: c2c-gpud[20450]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:35:15 xavier32 c2c-gpud[20452]: c2c-gpud[20452]: client 10.77.0.1 connected
+Nov 02 05:35:15 xavier32 c2c-gpud[20452]: c2c-gpud[20452]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:15 xavier32 c2c-gpud[20452]: c2c-gpud[20452]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:35:15 xavier32 c2c-gpud[20454]: c2c-gpud[20454]: client 10.77.0.1 connected
+Nov 02 05:35:15 xavier32 c2c-gpud[20454]: c2c-gpud[20454]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:15 xavier32 c2c-gpud[20454]: c2c-gpud[20454]: client 10.77.0.1 gone: 2 launches, 0.0 MiB in, 1.0 MiB out, 1 allocations still held
+Nov 02 05:35:15 xavier32 c2c-gpud[20456]: c2c-gpud[20456]: client 10.77.0.1 connected
+Nov 02 05:35:15 xavier32 c2c-gpud[20456]: c2c-gpud[20456]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:16 xavier32 c2c-gpud[20456]: c2c-gpud[20456]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:16 xavier32 c2c-gpud[20458]: c2c-gpud[20458]: client 10.77.0.1 connected
+Nov 02 05:35:16 xavier32 c2c-gpud[20458]: c2c-gpud[20458]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:16 xavier32 c2c-gpud[20458]: c2c-gpud[20458]: client 10.77.0.1 gone: 1 launches, 76.3 MiB in, 38.1 MiB out, 1 allocations still held
+Nov 02 05:35:17 xavier32 c2c-gpud[20460]: c2c-gpud[20460]: client 10.77.0.1 connected
+Nov 02 05:35:17 xavier32 c2c-gpud[20460]: c2c-gpud[20460]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:17 xavier32 c2c-gpud[20460]: c2c-gpud[20460]: client 10.77.0.1 gone: 201 launches, 64.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:18 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating restored (1)
+Nov 02 05:35:18 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating off while serving (was 1)
+Nov 02 05:35:18 xavier32 c2c-gpud[20462]: c2c-gpud[20462]: client 10.77.0.1 connected
+Nov 02 05:35:18 xavier32 c2c-gpud[20462]: c2c-gpud[20462]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:21 xavier32 c2c-gpud[20462]: c2c-gpud[20462]: client 10.77.0.1 gone: 3300 launches, 26.0 MiB in, 442.0 MiB out, 1 allocations still held
+Nov 02 05:35:21 xavier32 c2c-gpud[20464]: c2c-gpud[20464]: client 10.77.0.1 connected
+Nov 02 05:35:21 xavier32 c2c-gpud[20464]: c2c-gpud[20464]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:21 xavier32 c2c-gpud[20464]: c2c-gpud[20464]: client 10.77.0.1 gone: 808 launches, 4.0 MiB in, 64.0 MiB out, 0 allocations still held
+Nov 02 05:35:21 xavier32 c2c-gpud[20466]: c2c-gpud[20466]: client 10.77.0.1 connected
+Nov 02 05:35:22 xavier32 c2c-gpud[20466]: c2c-gpud[20466]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:22 xavier32 c2c-gpud[20466]: c2c-gpud[20466]: client 10.77.0.1 gone: 101 launches, 4.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:22 xavier32 c2c-gpud[20468]: c2c-gpud[20468]: client 10.77.0.1 connected
+Nov 02 05:35:22 xavier32 c2c-gpud[20468]: c2c-gpud[20468]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:22 xavier32 c2c-gpud[20468]: c2c-gpud[20468]: client 10.77.0.1 gone: 49 launches, 32.0 MiB in, 32.0 MiB out, 1 allocations still held
+Nov 02 05:35:23 xavier32 c2c-gpud[20470]: c2c-gpud[20470]: client 10.77.0.1 connected
+Nov 02 05:35:23 xavier32 c2c-gpud[20470]: c2c-gpud[20470]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:26 xavier32 c2c-gpud[20470]: c2c-gpud[20470]: client 10.77.0.1 gone: 290 launches, 8.0 MiB in, 120.0 MiB out, 0 allocations still held
+Nov 02 05:35:26 xavier32 c2c-gpud[20472]: c2c-gpud[20472]: client 10.77.0.1 connected
+Nov 02 05:35:26 xavier32 c2c-gpud[20472]: c2c-gpud[20472]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:29 xavier32 c2c-gpud[20472]: c2c-gpud[20472]: client 10.77.0.1 gone: 22 launches, 32.0 MiB in, 32.0 MiB out, 0 allocations still held
+Nov 02 05:35:29 xavier32 c2c-gpud[20474]: c2c-gpud[20474]: client 10.77.0.1 connected
+Nov 02 05:35:29 xavier32 c2c-gpud[20474]: c2c-gpud[20474]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:29 xavier32 c2c-gpud[20474]: c2c-gpud[20474]: client 10.77.0.1 gone: 5 launches, 0.2 MiB in, 16.1 MiB out, 1 allocations still held
+Nov 02 05:35:29 xavier32 c2c-gpud[20476]: c2c-gpud[20476]: client 10.77.0.1 connected
+Nov 02 05:35:30 xavier32 c2c-gpud[20476]: c2c-gpud[20476]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:30 xavier32 c2c-gpud[20476]: c2c-gpud[20476]: client 10.77.0.1 gone: 9 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:30 xavier32 c2c-gpud[20478]: c2c-gpud[20478]: client 10.77.0.1 connected
+Nov 02 05:35:30 xavier32 c2c-gpud[20478]: c2c-gpud[20478]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:31 xavier32 c2c-gpud[20478]: c2c-gpud[20478]: client 10.77.0.1 gone: 512 launches, 45.8 MiB in, 30.5 MiB out, 0 allocations still held
+Nov 02 05:35:32 xavier32 c2c-gpud[20481]: c2c-gpud[20481]: client 10.77.0.1 connected
+Nov 02 05:35:32 xavier32 c2c-gpud[20481]: c2c-gpud[20481]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:36 xavier32 c2c-gpud[20481]: c2c-gpud[20481]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:35:36 xavier32 c2c-gpud[20483]: c2c-gpud[20483]: client 10.77.0.1 connected
+Nov 02 05:35:36 xavier32 c2c-gpud[20483]: c2c-gpud[20483]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:36 xavier32 c2c-gpud[20483]: c2c-gpud[20483]: client 10.77.0.1 gone: 2 launches, 0.1 MiB in, 0.1 MiB out, 1 allocations still held
+Nov 02 05:35:37 xavier32 c2c-gpud[20485]: c2c-gpud[20485]: client 10.77.0.1 connected
+Nov 02 05:35:37 xavier32 c2c-gpud[20485]: c2c-gpud[20485]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:38 xavier32 c2c-gpud[20485]: c2c-gpud[20485]: client 10.77.0.1 gone: 42 launches, 0.0 MiB in, 24.0 MiB out, 0 allocations still held
+Nov 02 05:35:38 xavier32 c2c-gpud[20487]: c2c-gpud[20487]: client 10.77.0.1 connected
+Nov 02 05:35:38 xavier32 c2c-gpud[20487]: c2c-gpud[20487]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:38 xavier32 c2c-gpud[20487]: c2c-gpud[20487]: client 10.77.0.1 gone: 1 launches, 0.0 MiB in, 38.1 MiB out, 1 allocations still held
+Nov 02 05:35:38 xavier32 c2c-gpud[20489]: c2c-gpud[20489]: client 10.77.0.1 connected
+Nov 02 05:35:39 xavier32 c2c-gpud[20489]: c2c-gpud[20489]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:41 xavier32 c2c-gpud[20489]: c2c-gpud[20489]: client 10.77.0.1 gone: 34 launches, 36.0 MiB in, 36.0 MiB out, 0 allocations still held
+Nov 02 05:35:41 xavier32 c2c-gpud[20491]: c2c-gpud[20491]: client 10.77.0.1 connected
+Nov 02 05:35:42 xavier32 c2c-gpud[20491]: c2c-gpud[20491]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:43 xavier32 c2c-gpud[20491]: c2c-gpud[20491]: client 10.77.0.1 gone: 68 launches, 64.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:43 xavier32 c2c-gpud[20493]: c2c-gpud[20493]: client 10.77.0.1 connected
+Nov 02 05:35:43 xavier32 c2c-gpud[20493]: c2c-gpud[20493]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:44 xavier32 c2c-gpud[20493]: c2c-gpud[20493]: client 10.77.0.1 gone: 118 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:44 xavier32 c2c-gpud[20495]: c2c-gpud[20495]: client 10.77.0.1 connected
+Nov 02 05:35:44 xavier32 c2c-gpud[20495]: c2c-gpud[20495]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:44 xavier32 c2c-gpud[20495]: c2c-gpud[20495]: client 10.77.0.1 gone: 3 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:44 xavier32 c2c-gpud[20497]: c2c-gpud[20497]: client 10.77.0.1 connected
+Nov 02 05:35:44 xavier32 c2c-gpud[20497]: c2c-gpud[20497]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:47 xavier32 c2c-gpud[20497]: c2c-gpud[20497]: client 10.77.0.1 gone: 1 launches, 0.9 MiB in, 0.3 MiB out, 1 allocations still held
+Nov 02 05:35:47 xavier32 c2c-gpud[20499]: c2c-gpud[20499]: client 10.77.0.1 connected
+Nov 02 05:35:48 xavier32 c2c-gpud[20499]: c2c-gpud[20499]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:50 xavier32 c2c-gpud[20499]: c2c-gpud[20499]: client 10.77.0.1 gone: 63 launches, 17.4 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:35:51 xavier32 c2c-gpud[20501]: c2c-gpud[20501]: client 10.77.0.1 connected
+Nov 02 05:35:51 xavier32 c2c-gpud[20501]: c2c-gpud[20501]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:52 xavier32 c2c-gpud[20501]: c2c-gpud[20501]: client 10.77.0.1 gone: 4 launches, 2.3 MiB in, 0.0 MiB out, 2 allocations still held
+Nov 02 05:35:52 xavier32 c2c-gpud[20503]: c2c-gpud[20503]: client 10.77.0.1 connected
+Nov 02 05:35:52 xavier32 c2c-gpud[20503]: c2c-gpud[20503]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:53 xavier32 c2c-gpud[20503]: c2c-gpud[20503]: client 10.77.0.1 gone: 84 launches, 36.0 MiB in, 4.0 MiB out, 1 allocations still held
+Nov 02 05:35:53 xavier32 c2c-gpud[20505]: c2c-gpud[20505]: client 10.77.0.1 connected
+Nov 02 05:35:53 xavier32 c2c-gpud[20505]: c2c-gpud[20505]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:35:54 xavier32 c2c-gpud[20505]: c2c-gpud[20505]: client 10.77.0.1 gone: 43 launches, 1.5 MiB in, 9.2 MiB out, 1 allocations still held
+Nov 02 05:35:54 xavier32 c2c-gpud[20507]: c2c-gpud[20507]: client 10.77.0.1 connected
+Nov 02 05:35:54 xavier32 c2c-gpud[20507]: c2c-gpud[20507]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:36:08 xavier32 c2c-gpud[20507]: c2c-gpud[20507]: client 10.77.0.1 gone: 4096 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:36:08 xavier32 c2c-gpud[20510]: c2c-gpud[20510]: client 10.77.0.1 connected
+Nov 02 05:36:08 xavier32 c2c-gpud[20510]: c2c-gpud[20510]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:36:08 xavier32 c2c-gpud[20510]: c2c-gpud[20510]: client 10.77.0.1 gone: 6 launches, 0.0 MiB in, 0.0 MiB out, 1 allocations still held
+Nov 02 05:36:09 xavier32 c2c-gpud[20513]: c2c-gpud[20513]: client 10.77.0.1 connected
+Nov 02 05:36:09 xavier32 c2c-gpud[20513]: c2c-gpud[20513]: client 10.77.0.1 gone: 0 launches, 0.0 MiB in, 0.0 MiB out, 0 allocations still held
+Nov 02 05:36:09 xavier32 c2c-gpud[20515]: c2c-gpud[20515]: client 10.77.0.1 connected
+Nov 02 05:36:09 xavier32 c2c-gpud[20515]: c2c-gpud[20515]: device-address window 0x991000000 + 35 GiB
+Nov 02 05:36:12 xavier32 c2cd[19976]: c2cd: LINK DOWN: peer shut down
+Nov 02 05:36:12 xavier32 c2cd[19976]: c2cd: LINK UP: xavier32 (slave) <-> xavier (master), c2c0 10.77.0.2 <-> 10.77.0.1
+Nov 02 05:36:20 xavier32 c2c-gpud[20515]: c2c-gpud[20515]: client 10.77.0.1 gone: 20509 launches, 1346.0 MiB in, 577.0 MiB out, 1 allocations still held
+Nov 02 05:36:24 xavier32 c2c-gpud[20028]: c2c-gpud[20028]: GPU power gating restored (1)

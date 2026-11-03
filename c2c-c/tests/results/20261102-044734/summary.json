@@ -1,0 +1,12 @@
+{
+  "passed": 1,
+  "total": 1,
+  "tests": [
+    {
+      "id": "T04",
+      "name": "RAM pool: remote paging (2 GiB cap, 8 GiB program)",
+      "status": "PASS",
+      "summary": "8 GiB program capped at 2G RAM: 8.0 GiB paged into slave RAM (memd resident 8.25 GiB), write 0.176 GiB/s, verify 0.14 GiB/s, 0 errors"
+    }
+  ]
+}

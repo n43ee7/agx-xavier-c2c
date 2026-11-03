@@ -1,0 +1,24 @@
+{
+  "passed": 3,
+  "total": 3,
+  "tests": [
+    {
+      "id": "T08",
+      "name": "remote GPU as a local CUDA device",
+      "status": "PASS",
+      "summary": "master sees 2 GPUs (remote: Xavier 30.3 GiB); remote results verified=True; remote/native: SGEMM 1.374/1.383 TFLOPS, HGEMM 9.745/10.017, membw 108.92/111.1 GB/s, alloc 19.0 GiB; link 471.3/462.6 MB/s, 245930 launches/s, sync 163.4 us, via /dev/c2cch0"
+    },
+    {
+      "id": "T12",
+      "name": "raw USB channels (TCP-free GPU data path)",
+      "status": "PASS",
+      "summary": "raw: up 470.8 / down 459.7 / both 871.2 MB/s, sync p50 137.9 us (TCP 343.0 us), 4B read p50 165.0 us (TCP 367.3), GPU0<->GPU1 468.6/465.8 MB/s; 5 programs at once: 4 raw + 1 TCP, all ok=True"
+    },
+    {
+      "id": "T13",
+      "name": "raw channel: clean failure and recovery after a USB cut",
+      "status": "PASS",
+      "summary": "USB cut 1.5 s: running program ended in 0.0 s with exit 2 (no hang=True); link UP after 2.5 s; new raw session /dev/c2cch0: up 470.3 / down 443.5 MB/s, sync p50 139.3 us"
+    }
+  ]
+}

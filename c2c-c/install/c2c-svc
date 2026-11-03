@@ -1,0 +1,30 @@
+#!/bin/bash
+# c2c-svc - little helper the systemd units call (settings come from /etc/c2c/c2c.conf)
+#   memd          slave: lend rmem_lend_gib GiB to the master (runs in foreground)
+#   rmem-attach   master: wait for link UP, then hook the peer's RAM up as swap
+#   rmem-detach   master: swapoff + detach
+#   clocks        jetson_clocks (pin CPU/GPU/EMC)
+set -uo pipefail
+CONF=/etc/c2c/c2c.conf
+conf() { local v=""; [ -r "$CONF" ] && v="$(sed -n "s/^[[:space:]]*$1[[:space:]]*=[[:space:]]*\([^#[:space:]]*\).*/\1/p" "$CONF" | tail -n1)"; echo "${v:-$2}"; }
+case "${1:-}" in
+    memd)
+        gib="$(conf rmem_lend_gib 0)"
+        [ "$gib" -gt 0 ] || { echo "c2c-svc: rmem_lend_gib=0, nothing to lend"; exit 0; }
+        mkdir -p /run/c2c
+        exec /opt/c2c/bin/c2c-memd -s "${gib}G" -l "$(conf slave_ip 10.77.0.2)" -S /run/c2c/memd.json ;;
+    rmem-attach)
+        for i in $(seq 1 120); do grep -q '"state":"UP"' /run/c2c/status.json 2>/dev/null && break; sleep 1; done
+        grep -q '"state":"UP"' /run/c2c/status.json 2>/dev/null || { echo "c2c-svc: link not up, remote RAM not attached"; exit 1; }
+        for i in $(seq 1 30); do   # memd on the slave might not be up yet
+            /opt/c2c/bin/c2c-rmem attach -s "$(conf slave_ip 10.77.0.2)" -c 2 -w 100 -r "$(conf rmem_page_cluster 7)" && exit 0
+            sleep 2
+        done
+        exit 1 ;;
+    rmem-detach) /opt/c2c/bin/c2c-rmem detach; exit 0 ;;
+    clocks)
+        [ "$(conf clocks_at_boot yes)" = yes ] || exit 0
+        command -v jetson_clocks >/dev/null || { echo "c2c-svc: jetson_clocks not found"; exit 0; }
+        jetson_clocks ;;
+    *) echo "usage: c2c-svc memd|rmem-attach|rmem-detach|clocks"; exit 2 ;;
+esac

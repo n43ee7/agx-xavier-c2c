@@ -1,0 +1,32 @@
+/home/jetson-agx/C2C-thunderbolt/tests/build/samples/3_Imaging/dct8x8/dct8x8 Starting...
+
+GPU Device 0: "Xavier" with compute capability 7.2
+
+CUDA sample DCT/IDCT implementation
+===================================
+Loading test image: barbara.bmp... [512 x 512]... Success
+Running Gold 1 (CPU) version... Success
+Running Gold 2 (CPU) version... Success
+Running CUDA 1 (GPU) version... Success
+Running CUDA 2 (GPU) version... 11697.635118 MPix/s //0.022410 ms
+Success
+Running CUDA short (GPU) version... Success
+Dumping result to barbara_gold1.bmp... Success
+Dumping result to barbara_gold2.bmp... Success
+Dumping result to barbara_cuda1.bmp... Success
+Dumping result to barbara_cuda2.bmp... Success
+Dumping result to barbara_cuda_short.bmp... Success
+Processing time (CUDA 1)    : 0.249800 ms 
+Processing time (CUDA 2)    : 0.022410 ms 
+Processing time (CUDA short): 0.353000 ms 
+PSNR Original    <---> CPU(Gold 1)    : 32.777073
+PSNR Original    <---> CPU(Gold 2)    : 32.777046
+PSNR Original    <---> GPU(CUDA 1)    : 32.777092
+PSNR Original    <---> GPU(CUDA 2)    : 32.777077
+PSNR Original    <---> GPU(CUDA short): 32.749447
+PSNR CPU(Gold 1) <---> GPU(CUDA 1)    : 64.019310
+PSNR CPU(Gold 2) <---> GPU(CUDA 2)    : 71.777740
+PSNR CPU(Gold 2) <---> GPU(CUDA short): 42.258053
+
+Test Summary...
+Test passed

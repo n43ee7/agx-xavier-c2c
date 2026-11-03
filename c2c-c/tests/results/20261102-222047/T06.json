@@ -1,0 +1,44 @@
+{
+  "id": "T06",
+  "name": "GPU pool (2x Volta, memory + compute)",
+  "status": "PASS",
+  "summary": "2 GPUs together: 30.0 GiB allocated (10.25+19.75), FP32 2.786 TFLOPS, SGEMM 2.779 TFLOPS, tensor-core HGEMM 20.552 TFLOPS, 231.44 GB/s mem bandwidth; slave GPU 90.9% peak load (c2cd telemetry)",
+  "time": "2026-11-02 22:28:30",
+  "metrics": {
+    "master": {
+      "host": "xavier",
+      "name": "Xavier",
+      "max_alloc_gib": 10.25,
+      "gpu_total_mem_gib": 14.54,
+      "fp32_fma_tflops": 1.396,
+      "sgemm_tflops": 1.396,
+      "hgemm_tc_tflops": 10.367,
+      "membw_gbs": 118.02
+    },
+    "slave": {
+      "host": "xavier32",
+      "name": "Xavier",
+      "max_alloc_gib": 19.75,
+      "gpu_total_mem_gib": 30.26,
+      "fp32_fma_tflops": 1.39,
+      "sgemm_tflops": 1.383,
+      "hgemm_tc_tflops": 10.185,
+      "membw_gbs": 113.42
+    },
+    "cluster": {
+      "fp32_fma_tflops": 2.786,
+      "sgemm_tflops": 2.779,
+      "hgemm_tc_tflops": 20.552,
+      "membw_gbs": 231.44,
+      "gpus": 2,
+      "sms": 16,
+      "cuda_cores": 1024,
+      "tensor_cores": 128,
+      "max_alloc_gib": 30.0
+    },
+    "gpu_util_peak": {
+      "master": 46.2,
+      "slave": 90.9
+    }
+  }
+}

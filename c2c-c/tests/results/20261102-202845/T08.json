@@ -1,0 +1,67 @@
+{
+  "id": "T08",
+  "name": "remote GPU as a local CUDA device",
+  "status": "PASS",
+  "summary": "master sees 2 GPUs (remote: Xavier 30.3 GiB); remote results verified=True; remote/native: SGEMM 1.376/1.385 TFLOPS, HGEMM 9.864/10.014, membw 111.26/112.95 GB/s, alloc 19.0 GiB; link 469.1/459.6 MB/s, 267835 launches/s, sync 354.3 us",
+  "time": "2026-11-02 20:37:28",
+  "metrics": {
+    "gpus": [
+      {
+        "ordinal": 0,
+        "name": "Xavier",
+        "cc": "7.2",
+        "sms": 8,
+        "clock_mhz": 1377,
+        "total_mem": 15609847808,
+        "pci": "0000:00:00.0",
+        "remote": false
+      },
+      {
+        "ordinal": 1,
+        "name": "Xavier",
+        "cc": "7.2",
+        "sms": 8,
+        "clock_mhz": 1377,
+        "total_mem": 32496168960,
+        "pci": "0c2c:00:00.0",
+        "remote": true
+      }
+    ],
+    "checks": {
+      "saxpy_ok": true,
+      "reduction_ok": true,
+      "sgemm_ok": true,
+      "struct_param_ok": true,
+      "streams_ok": true
+    },
+    "link": {
+      "htod_pinned_mbs": 469.1,
+      "dtoh_pinned_mbs": 459.6,
+      "htod_pageable_mbs": 468.5,
+      "dtoh_pageable_mbs": 423.3,
+      "async_launches_per_s": 267835,
+      "launch_sync_us": 354.3,
+      "dtoh_4b_us": 403.9
+    },
+    "native_on_slave": {
+      "fp32_fma_tflops": 1.39,
+      "sgemm_tflops": 1.385,
+      "hgemm_tc_tflops": 10.014,
+      "membw_gbs": 112.95,
+      "max_alloc": 20401094656
+    },
+    "remote_from_master": {
+      "fp32_fma_tflops": 1.386,
+      "sgemm_tflops": 1.376,
+      "hgemm_tc_tflops": 9.864,
+      "membw_gbs": 111.26,
+      "max_alloc": 20401094656
+    },
+    "remote_vs_native": {
+      "fp32_fma_tflops": 0.997,
+      "sgemm_tflops": 0.994,
+      "hgemm_tc_tflops": 0.985,
+      "membw_gbs": 0.985
+    }
+  }
+}

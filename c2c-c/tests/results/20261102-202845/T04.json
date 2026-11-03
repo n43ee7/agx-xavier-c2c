@@ -1,0 +1,25 @@
+{
+  "id": "T04",
+  "name": "RAM pool: remote paging (2 GiB cap, 8 GiB program)",
+  "status": "PASS",
+  "summary": "8 GiB program capped at 2G RAM: 8.0 GiB paged into slave RAM (memd resident 8.51 GiB), write 0.167 GiB/s, verify 0.138 GiB/s, 0 errors",
+  "time": "2026-11-02 20:32:30",
+  "metrics": {
+    "gib": 8.0,
+    "bytes": 8589934592,
+    "write_s": 48.03,
+    "verify_s": 57.78,
+    "write_gib_s": 0.167,
+    "verify_gib_s": 0.138,
+    "errors": 0,
+    "rss_after_write_kb": 2081136,
+    "swap_after_write_kb": 6308472,
+    "peak_rss_kb": 2089664,
+    "peak_swap_kb": 6308472,
+    "ram_cap": "2G",
+    "exit_code": 0,
+    "peak_remote_swap_gib": 8.0,
+    "peak_zram_gib": 0.0,
+    "peak_slave_memd_resident_gib": 8.51
+  }
+}

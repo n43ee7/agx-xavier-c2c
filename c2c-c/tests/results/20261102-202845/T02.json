@@ -1,0 +1,57 @@
+{
+  "id": "T02",
+  "name": "cluster inventory (CPUs, RAM, GPUs)",
+  "status": "PASS",
+  "summary": "16 CPUs (8+8), 44.8 GiB RAM (14.54+30.26), 2 GPUs / 16 SMs / 1024 CUDA cores / 128 tensor cores, peak 2.82 FP32 TFLOPS",
+  "time": "2026-11-02 20:29:00",
+  "metrics": {
+    "master": {
+      "host": "xavier",
+      "cpus": 8,
+      "cpu": "NVIDIA Carmel (ARMv8.2)",
+      "cpu_max_mhz": 2265,
+      "ram_gib": 14.54,
+      "ram_avail_gib": 11.55,
+      "gpu": "Xavier",
+      "gpu_cc": "7.2",
+      "gpu_sms": 8,
+      "cuda_cores": 512,
+      "tensor_cores": 64,
+      "gpu_clock_mhz": 1377,
+      "gpu_mem_gib": 14.54,
+      "peak_fp32_tflops": 1.41
+    },
+    "slave": {
+      "host": "xavier32",
+      "cpus": 8,
+      "cpu": "NVIDIA Carmel (ARMv8.2)",
+      "cpu_max_mhz": 2265,
+      "ram_gib": 30.26,
+      "ram_avail_gib": 24.32,
+      "gpu": "Xavier",
+      "gpu_cc": "7.2",
+      "gpu_sms": 8,
+      "cuda_cores": 512,
+      "tensor_cores": 64,
+      "gpu_clock_mhz": 1377,
+      "gpu_mem_gib": 30.26,
+      "peak_fp32_tflops": 1.41
+    },
+    "cluster": {
+      "nodes": 2,
+      "cpus": 16,
+      "ram_gib": 44.8,
+      "ram_avail_gib": 35.87,
+      "gpus": 2,
+      "gpu_sms": 16,
+      "cuda_cores": 1024,
+      "tensor_cores": 128,
+      "gpu_mem_gib": 44.8,
+      "peak_fp32_tflops": 2.82,
+      "nvenc": 2,
+      "nvdec": 4,
+      "dla": 4
+    },
+    "telemetry_matches_probe": true
+  }
+}

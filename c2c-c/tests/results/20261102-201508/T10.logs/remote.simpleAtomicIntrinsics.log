@@ -1,0 +1,5 @@
+simpleAtomicIntrinsics starting...
+GPU Device 0: "Xavier" with compute capability 7.2
+
+Processing time: 6.247000 (ms)
+simpleAtomicIntrinsics completed, returned OK

@@ -1,0 +1,43 @@
+{
+  "id": "T12",
+  "name": "raw USB channels (TCP-free GPU data path)",
+  "status": "PASS",
+  "summary": "raw: up 470.8 / down 459.6 / both 871.8 MB/s, sync p50 140.0 us (TCP 341.6 us), 4B read p50 159.9 us (TCP 364.1), GPU0<->GPU1 468.5/465.8 MB/s; 5 programs at once: 4 raw + 1 TCP, all ok=True",
+  "time": "2026-11-02 22:33:12",
+  "metrics": {
+    "raw": {
+      "h2d_mbs": 470.8,
+      "d2h_mbs": 459.6,
+      "bidir_mbs": 871.8,
+      "sync_p50_us": 140.0,
+      "sync_p99_us": 175.1,
+      "read4_p50_us": 159.9,
+      "peer_to_mbs": 468.5,
+      "peer_from_mbs": 465.8
+    },
+    "tcp": {
+      "h2d_mbs": 458.2,
+      "d2h_mbs": 459.3,
+      "bidir_mbs": 853.0,
+      "sync_p50_us": 341.6,
+      "sync_p99_us": 419.1,
+      "read4_p50_us": 364.1,
+      "peer_to_mbs": 464.4,
+      "peer_from_mbs": 464.2
+    },
+    "channels": 4,
+    "concurrent": {
+      "programs": 5,
+      "raw": 4,
+      "tcp": 1,
+      "all_ok": true,
+      "h2d_mbs": [
+        93.8,
+        93.5,
+        94.1,
+        92.7,
+        93.8
+      ]
+    }
+  }
+}

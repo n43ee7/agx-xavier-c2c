@@ -1,0 +1,16 @@
+nvbandwidth Version: v0.5
+Built from Git version: v0.5
+
+NOTE: This tool reports current measured bandwidth on your system.
+Additional system-specific tuning may be required to achieve maximal peak bandwidth.
+
+CUDA Runtime Version: 11040
+CUDA Driver Version: 11040
+Driver Version: L4T R35.6.5
+
+Device 0: Xavier
+Device 1: Xavier
+
+Running host_to_device_memcpy_ce.
+[CUDA_ERROR_ILLEGAL_ADDRESS] an illegal memory access was encountered in expression nodeHelper->streamSynchronizeWrapper(stream) in double MemcpyOperation::doMemcpyCore(const std::vector<const MemcpyBuffer*>&, const std::vector<const MemcpyBuffer*>&, const std::vector<CUctx_st*>&)() : /home/jetson-agx/c2c-bench/nvbandwidth/memcpy.cpp:383
+

@@ -1,0 +1,72 @@
+{
+  "passed": 11,
+  "total": 11,
+  "tests": [
+    {
+      "id": "T01",
+      "name": "link health",
+      "status": "PASS",
+      "summary": "RTT 0.538 ms avg, TCP 3.712 Gbit/s master->slave, 3.714 Gbit/s slave->master"
+    },
+    {
+      "id": "T02",
+      "name": "cluster inventory (CPUs, RAM, GPUs)",
+      "status": "PASS",
+      "summary": "16 CPUs (8+8), 44.8 GiB RAM (14.54+30.26), 2 GPUs / 16 SMs / 1024 CUDA cores / 128 tensor cores, peak 2.82 FP32 TFLOPS"
+    },
+    {
+      "id": "T03",
+      "name": "CPU pool (16 cores, unmodified xz)",
+      "status": "PASS",
+      "summary": "xz 512 MiB: master-only 44.45 s, pooled 16 cores 26.97 s = 1.65x; slave did 29/64 chunks; CPU mid-run master 99.9% slave 85.1%"
+    },
+    {
+      "id": "T04",
+      "name": "RAM pool: remote paging (2 GiB cap, 8 GiB program)",
+      "status": "PASS",
+      "summary": "8 GiB program capped at 2G RAM: 8.0 GiB paged into slave RAM (memd resident 8.51 GiB), write 0.162 GiB/s, verify 0.135 GiB/s, 0 errors"
+    },
+    {
+      "id": "T05",
+      "name": "RAM pool: one program larger than master RAM",
+      "status": "PASS",
+      "summary": "one process used 20.5 GiB on a 14.5 GiB master (+5.96 GiB over physical): 12.08 GiB held in slave RAM, zram 0.0 GiB, write 0.332 GiB/s, verify 0.139 GiB/s, 0 errors"
+    },
+    {
+      "id": "T06",
+      "name": "GPU pool (2x Volta, memory + compute)",
+      "status": "PASS",
+      "summary": "2 GPUs together: 32.5 GiB allocated (10.25+22.25), FP32 2.789 TFLOPS, SGEMM 2.03 TFLOPS, tensor-core HGEMM 15.067 TFLOPS, 176.39 GB/s mem bandwidth; slave GPU 95.6% peak load (c2cd telemetry)"
+    },
+    {
+      "id": "T07",
+      "name": "remote memory survives link outage",
+      "status": "PASS",
+      "summary": "1 GiB in slave RAM; link cut for 1.6 s mid-read; read resumed, data identical, device still attached; kfix loaded=1"
+    },
+    {
+      "id": "T08",
+      "name": "remote GPU as a local CUDA device",
+      "status": "PASS",
+      "summary": "master sees 2 GPUs (remote: Xavier 30.3 GiB); remote results verified=True; remote/native: SGEMM 1.379/1.391 TFLOPS, HGEMM 9.908/10.168, membw 111.0/114.62 GB/s, alloc 19.0 GiB; link 467.8/458.9 MB/s, 127338 launches/s, sync 391.6 us"
+    },
+    {
+      "id": "T09",
+      "name": "one process uses both GPUs",
+      "status": "PASS",
+      "summary": "one process, 2 GPUs: split SAXPY over 268435456 elements on 2 GPUs ok=True (3.833 s); per-GPU checks [True, True]; samples {'simpleMultiGPU': 'PASS', 'MonteCarloMultiGPU': 'PASS', 'deviceQuery': 'PASS'}; deviceQuery: Detected 2 CUDA Capable device(s)"
+    },
+    {
+      "id": "T10",
+      "name": "NVIDIA CUDA samples on the remote GPU",
+      "status": "PASS",
+      "summary": "49 unmodified samples: remote 48 pass / 1 waived / 0 fail; local 49 pass / 0 waived / 0 fail; remote-only failures: none; waived remotely: ['UnifiedMemoryStreams']"
+    },
+    {
+      "id": "T11",
+      "name": "remote GPU survives link outage",
+      "status": "PASS",
+      "summary": "remote GPU job ran through a 1.5 s link cut: exit 0, results verified=True, total 11.0 s, link UP"
+    }
+  ]
+}

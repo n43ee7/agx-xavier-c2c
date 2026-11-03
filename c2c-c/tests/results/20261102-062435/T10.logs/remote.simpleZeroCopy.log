@@ -1,0 +1,3 @@
+Device 0 does not support mapping CPU host memory!
+  Device 0: <          Xavier >, Compute SM 7.2 detected
+> Using CUDA Host Allocated (cudaHostAlloc)

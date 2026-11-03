@@ -1,0 +1,18 @@
+/home/jetson-agx/C2C-thunderbolt/tests/build/samples/6_Advanced/reduction/reduction Starting...
+
+GPU Device 0: "Xavier" with compute capability 7.2
+
+Using Device 0: Xavier
+
+Reducing array of type int
+
+16777216 elements
+256 threads (max)
+64 blocks
+
+Reduction, Throughput = 62.4926 GB/s, Time = 0.00107 s, Size = 16777216 Elements, NumDevsUsed = 1, Workgroup = 256
+
+GPU result = 2139353471
+CPU result = 2139353471
+
+Test passed

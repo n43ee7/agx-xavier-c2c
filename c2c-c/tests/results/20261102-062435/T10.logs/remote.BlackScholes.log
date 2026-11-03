@@ -1,0 +1,36 @@
+[/home/jetson-agx/C2C-thunderbolt/tests/build/samples/4_Finance/BlackScholes/BlackScholes] - Starting...
+GPU Device 0: "Xavier" with compute capability 7.2
+
+Initializing data...
+...allocating CPU memory for options.
+...allocating GPU memory for options.
+...generating input data in CPU mem.
+...copying input data to GPU mem.
+Data init done.
+
+Executing Black-Scholes GPU kernel (512 iterations)...
+Options count             : 8000000     
+BlackScholesGPU() time    : 0.681135 msec
+Effective memory bandwidth: 117.451061 GB/s
+Gigaoptions per second    : 11.745106     
+
+BlackScholes, Throughput = 11.7451 GOptions/s, Time = 0.00068 s, Size = 8000000 options, NumDevsUsed = 1, Workgroup = 128
+
+Reading back GPU results...
+Checking the results...
+...running CPU calculations.
+
+Comparing the results...
+L1 norm: 1.741792E-07
+Max absolute error: 1.192093E-05
+
+Shutting down...
+...releasing GPU memory.
+...releasing CPU memory.
+Shutdown done.
+
+[BlackScholes] - Test Summary
+
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.
+
+Test passed

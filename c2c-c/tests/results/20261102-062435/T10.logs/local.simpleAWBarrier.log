@@ -1,0 +1,6 @@
+/home/jetson-agx/C2C-thunderbolt/tests/build/samples/0_Simple/simpleAWBarrier/simpleAWBarrier starting...
+GPU Device 0: "Xavier" with compute capability 7.2
+
+Launching normVecByDotProductAWBarrier kernel with numBlocks = 16 blockSize = 640
+Result = PASSED
+/home/jetson-agx/C2C-thunderbolt/tests/build/samples/0_Simple/simpleAWBarrier/simpleAWBarrier completed, returned OK

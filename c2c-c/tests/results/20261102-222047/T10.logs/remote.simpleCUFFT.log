@@ -1,0 +1,7 @@
+[simpleCUFFT] is starting...
+GPU Device 0: "Xavier" with compute capability 7.2
+
+Temporary buffer size 448 bytes
+Transforming signal cufftExecC2C
+Launching ComplexPointwiseMulAndScale<<< >>>
+Transforming signal back cufftExecC2C

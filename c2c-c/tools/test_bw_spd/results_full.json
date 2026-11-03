@@ -1,0 +1,23 @@
+[
+  {"test":"info","speed":"super-speed","mps_in":1024,"mps_out":1024,"burst":16,"gadget_qlen":32,"gadget_buflen":65536},
+  {"test":"kernel","dir":"out","urb":16384,"bytes":1073741824,"ns":2307622745,"MiBps":443.7,"gadget_match":1},
+  {"test":"kernel","dir":"in","urb":16384,"bytes":1073741824,"ns":3432902305,"MiBps":298.3},
+  {"test":"kernel","dir":"out","urb":65536,"bytes":1073741824,"ns":2278050114,"MiBps":449.5,"gadget_match":1},
+  {"test":"kernel","dir":"in","urb":65536,"bytes":1073741824,"ns":2299857271,"MiBps":445.2},
+  {"test":"kernel","dir":"out","urb":262144,"bytes":1073741824,"ns":2329461834,"MiBps":439.6,"gadget_match":1},
+  {"test":"kernel","dir":"in","urb":262144,"bytes":1073741824,"ns":2549319758,"MiBps":401.7},
+  {"test":"kernel","dir":"out","urb":1048576,"bytes":1073741824,"ns":2342474441,"MiBps":437.1,"gadget_match":1},
+  {"test":"kernel","dir":"in","urb":1048576,"bytes":1073741824,"ns":2612785163,"MiBps":391.9},
+  {"test":"kernel","dir":"out","urb":4194304,"bytes":1073741824,"ns":2345852266,"MiBps":436.5,"gadget_match":1},
+  {"test":"kernel","dir":"in","urb":4194304,"bytes":1073741824,"ns":2629016990,"MiBps":389.5},
+  {"test":"kernel","dir":"bidir","urb":65536,"out_MiBps":428.8,"in_MiBps":428.8},
+  {"test":"pingpong","size":8,"iters":2000,"min_us":75.7,"avg_us":103.4,"p50_us":90.1,"p99_us":142.2,"max_us":450.8,"bad":0},
+  {"test":"pingpong","size":512,"iters":2000,"min_us":104.7,"avg_us":120.4,"p50_us":113.6,"p99_us":156.2,"max_us":601.3,"bad":0},
+  {"test":"pingpong","size":1024,"iters":2000,"min_us":110.7,"avg_us":114.9,"p50_us":112.6,"p99_us":151.9,"max_us":572.6,"bad":0},
+  {"test":"pingpong","size":4096,"iters":2000,"min_us":116.4,"avg_us":120.8,"p50_us":118.3,"p99_us":160.4,"max_us":601.1,"bad":0},
+  {"test":"pingpong","size":65536,"iters":2000,"min_us":375.7,"avg_us":381.0,"p50_us":378.7,"p99_us":412.0,"max_us":861.1,"bad":0},
+  {"test":"pingpong","size":1048576,"iters":200,"min_us":2765.1,"avg_us":2782.7,"p50_us":2771.8,"p99_us":2867.2,"max_us":3263.8,"bad":0},
+  {"test":"user","dir":"write","bytes":1073741824,"MiBps":437.0},
+  {"test":"user","dir":"read","bytes":1073741824,"MiBps":395.2},
+  {"test":"user","dir":"loopback","bytes":1073741824,"MiBps":410.1,"bad_words":0,"err":0}
+]

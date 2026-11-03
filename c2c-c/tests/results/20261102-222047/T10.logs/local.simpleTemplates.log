@@ -1,0 +1,16 @@
+> runTest<float,32>
+GPU Device 0: "Xavier" with compute capability 7.2
+
+CUDA device [Xavier] has 8 Multi-Processors
+Processing time: 105.014999 (ms)
+Compare OK
+
+> runTest<int,64>
+GPU Device 0: "Xavier" with compute capability 7.2
+
+CUDA device [Xavier] has 8 Multi-Processors
+Processing time: 0.629000 (ms)
+Compare OK
+
+
+[simpleTemplates] -> Test Results: 0 Failures

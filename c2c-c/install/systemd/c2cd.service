@@ -1,0 +1,20 @@
+[Unit]
+Description=C2C link daemon (@ROLE@) - keyed USB link to the peer Jetson
+Documentation=file:///opt/c2c/src/README.md
+After=systemd-modules-load.service network-pre.target @AFTER@
+Wants=@WANTS@
+
+[Service]
+Type=simple
+ExecStartPre=-/opt/c2c/bin/c2c-ensure-module.sh @ROLE@
+ExecStart=/opt/c2c/bin/c2cd -c /etc/c2c/c2c.conf
+Restart=always
+RestartSec=2
+Nice=-5
+# remote-RAM swap goes through us, so the OOM killer must never pick c2cd
+OOMScoreAdjust=-1000
+# nothing else depends on this unit. no peer or wrong KEY -> c2cd sits DOWN
+# and keeps listening
+
+[Install]
+WantedBy=multi-user.target

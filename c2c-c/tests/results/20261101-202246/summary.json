@@ -1,0 +1,12 @@
+{
+  "passed": 1,
+  "total": 1,
+  "tests": [
+    {
+      "id": "T05",
+      "name": "RAM pool: one program larger than master RAM",
+      "status": "PASS",
+      "summary": "one process used 16.5 GiB on a 14.5 GiB master (+1.96 GiB over physical): 11.83 GiB held in slave RAM, zram 0.0 GiB, write 0.431 GiB/s, verify 0.115 GiB/s, 0 errors"
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+/etc/systemd/system/c2cd.service
+/etc/systemd/system/c2c-gadget.service
+/etc/systemd/system/c2c-gpud.service
+### /etc/systemd/system/c2cd.service
+[Unit]
+Description=C2C link daemon (slave) - keyed USB link to the peer Jetson
+Documentation=file:///opt/c2c/src/README.md
+After=systemd-modules-load.service network-pre.target c2c-gadget.service
+Wants=c2c-gadget.service
+
+[Service]
+Type=simple
+ExecStartPre=-/opt/c2c/bin/c2c-ensure-module.sh slave
+ExecStart=/opt/c2c/bin/c2cd -c /etc/c2c/c2c.conf
+Restart=always
+RestartSec=2
+Nice=-5
+# carries remote-memory swap traffic: never OOM-kill the link
+OOMScoreAdjust=-1000
+# the rest of the system never depends on this unit: if the peer is absent
+# or presents a different KEY, c2cd just stays DOWN and keeps listening
+
+[Install]
+WantedBy=multi-user.target
+### /etc/systemd/system/c2c-gadget.service
+[Unit]
+Description=C2C USB gadget (slave): expose the c2c bulk function on the USB-C port
+After=nv-l4t-usb-device-mode.service systemd-modules-load.service
+PartOf=nv-l4t-usb-device-mode.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStartPre=-/opt/c2c/bin/c2c-ensure-module.sh slave
+ExecStart=/opt/c2c/bin/c2c-gadget.sh attach
+ExecStop=/opt/c2c/bin/c2c-gadget.sh detach
+TimeoutStartSec=90
+
+[Install]
+WantedBy=multi-user.target
+### /etc/systemd/system/c2c-gpud.service
+[Unit]
+Description=C2C remote GPU server - lends this node's GPU to the C2C peer
+Documentation=file:///opt/c2c/src/gpu/README.md
+After=c2cd.service
+Wants=c2cd.service
+
+[Service]
+Type=simple
+# listens only on the link address and accepts only the peer
+ExecStart=/opt/c2c/bin/c2c-gpud -l 10.77.0.2 -a 10.77.0.1 -c /var/cache/c2c-gpud
+Restart=always
+RestartSec=2
+Nice=-5
+CacheDirectory=c2c-gpud
+# GPU power gating is turned off while a client is connected and restored
+# afterwards (runtime sysfs only); SIGTERM restores it too
+KillMode=mixed
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target

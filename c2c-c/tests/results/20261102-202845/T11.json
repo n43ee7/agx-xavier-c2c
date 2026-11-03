@@ -1,0 +1,21 @@
+{
+  "id": "T11",
+  "name": "remote GPU survives link outage",
+  "status": "PASS",
+  "summary": "remote GPU job ran through a 1.5 s link cut: exit 0, results verified=True, total 10.7 s, link UP",
+  "time": "2026-11-02 20:40:51",
+  "metrics": {
+    "exit_code": 0,
+    "link_outage_s": 1.52,
+    "run_s": 10.71,
+    "link_state_after": "UP",
+    "checks": {
+      "saxpy_ok": true,
+      "reduction_ok": true,
+      "sgemm_ok": true,
+      "struct_param_ok": true,
+      "streams_ok": true
+    },
+    "ran_on_remote": true
+  }
+}

@@ -1,0 +1,321 @@
+{
+  "id": "T10",
+  "name": "NVIDIA CUDA samples on the remote GPU",
+  "status": "PASS",
+  "summary": "49 unmodified samples: remote 48 pass / 1 waived / 0 fail; local 49 pass / 0 waived / 0 fail; remote-only failures: none; waived remotely: ['UnifiedMemoryStreams']",
+  "time": "2026-11-02 06:36:09",
+  "metrics": {
+    "samples": 49,
+    "remote": {
+      "PASS": 48,
+      "WAIVED": 1,
+      "FAIL": 0
+    },
+    "local": {
+      "PASS": 49,
+      "WAIVED": 0,
+      "FAIL": 0
+    },
+    "remote_failures_that_pass_locally": [],
+    "local_failures": [],
+    "waived_remote": [
+      "UnifiedMemoryStreams"
+    ],
+    "per_sample": {
+      "BlackScholes": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 1.89,
+        "local_s": 1.55
+      },
+      "MersenneTwisterGP11213": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.45,
+        "local_s": 0.31
+      },
+      "MonteCarloMultiGPU": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.42,
+        "local_s": 0.29
+      },
+      "SobolQRNG": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.49,
+        "local_s": 0.32
+      },
+      "UnifiedMemoryStreams": {
+        "local": "PASS",
+        "remote": "WAIVED",
+        "remote_s": 0.32,
+        "local_s": 2.85
+      },
+      "asyncAPI": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.84,
+        "local_s": 0.43
+      },
+      "bandwidthTest": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 14.66,
+        "local_s": 0.81
+      },
+      "batchCUBLAS": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 3.06,
+        "local_s": 2.27
+      },
+      "binomialOptions": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 4.36,
+        "local_s": 4.29
+      },
+      "clock": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.18
+      },
+      "concurrentKernels": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.18
+      },
+      "conjugateGradient": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 1.36,
+        "local_s": 1.2
+      },
+      "convolutionSeparable": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 2.89,
+        "local_s": 2.62
+      },
+      "cppIntegration": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.17
+      },
+      "dct8x8": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.73,
+        "local_s": 0.6
+      },
+      "deviceQuery": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.06
+      },
+      "deviceQueryDrv": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.18,
+        "local_s": 0.06
+      },
+      "dwtHaar1D": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.32,
+        "local_s": 0.2
+      },
+      "fastWalshTransform": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 2.5,
+        "local_s": 2.28
+      },
+      "histogram": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 1.57,
+        "local_s": 1.31
+      },
+      "inlinePTX": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.29,
+        "local_s": 0.18
+      },
+      "matrixMul": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.44,
+        "local_s": 0.3
+      },
+      "matrixMulDrv": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.18
+      },
+      "mergeSort": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.65,
+        "local_s": 0.41
+      },
+      "p2pBandwidthLatencyTest": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.54,
+        "local_s": 0.35
+      },
+      "quasirandomGenerator": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 1.18,
+        "local_s": 0.98
+      },
+      "reduction": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.93,
+        "local_s": 0.57
+      },
+      "scan": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 2.98,
+        "local_s": 1.78
+      },
+      "shfl_scan": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.38,
+        "local_s": 0.22
+      },
+      "simpleAWBarrier": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.87,
+        "local_s": 0.49
+      },
+      "simpleAtomicIntrinsics": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.18
+      },
+      "simpleCUBLAS": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 2.99,
+        "local_s": 2.2
+      },
+      "simpleCUBLASXT": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 13.84,
+        "local_s": 12.64
+      },
+      "simpleCUFFT": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 1.31,
+        "local_s": 0.45
+      },
+      "simpleCallback": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.33,
+        "local_s": 0.2
+      },
+      "simpleCooperativeGroups": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.31,
+        "local_s": 0.18
+      },
+      "simpleMultiCopy": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 2.15,
+        "local_s": 0.75
+      },
+      "simpleMultiGPU": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 1.71,
+        "local_s": 1.32
+      },
+      "simpleOccupancy": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.36,
+        "local_s": 0.22
+      },
+      "simpleStreams": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 29.97,
+        "local_s": 1.16
+      },
+      "simpleTemplates": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.18
+      },
+      "simpleTexture": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.35,
+        "local_s": 0.23
+      },
+      "simpleVoteIntrinsics": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.18
+      },
+      "simpleZeroCopy": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.27
+      },
+      "sortingNetworks": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 3.56,
+        "local_s": 3.49
+      },
+      "threadFenceReduction": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.44,
+        "local_s": 0.23
+      },
+      "transpose": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.63,
+        "local_s": 0.38
+      },
+      "vectorAdd": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.3,
+        "local_s": 0.19
+      },
+      "vectorAddDrv": {
+        "local": "PASS",
+        "remote": "PASS",
+        "remote_s": 0.32,
+        "local_s": 0.19
+      }
+    }
+  }
+}

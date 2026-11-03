@@ -1,0 +1,32 @@
+[simpleMultiCopy] - Starting...
+> Using CUDA device [0]: Xavier
+[Xavier] has 8 MP(s) x 64 (Cores/MP) = 512 (Cores)
+> Device name: Xavier
+> CUDA Capability 7.2 hardware with 8 multi-processors
+> scale_factor = 1.00
+> array_size   = 4194304
+
+
+Relevant properties of this CUDA device
+(X) Can overlap one CPU<>GPU data transfer with GPU kernel execution (device property "deviceOverlap")
+( ) Can overlap two CPU<>GPU data transfers with GPU kernel execution
+    (Compute Capability >= 2.0 AND (Tesla product OR Quadro 4000/5000/6000/K5000)
+
+Measured timings (throughput):
+ Memcpy host to device	: 37.344353 ms (0.449257 GB/s)
+ Memcpy device to host	: 38.097248 ms (0.440379 GB/s)
+ Kernel			: 0.768064 ms (218.435124 GB/s)
+
+Theoretical limits for speedup gained from overlapped data transfers:
+No overlap at all (transfer-kernel-transfer): 76.209671 ms 
+Compute can overlap with one transfer: 75.441605 ms
+Compute can overlap with both data transfers: 38.097248 ms
+
+Average measured timings over 10 repetitions:
+ Avg. time when execution fully serialized	: 74.327713 ms
+ Avg. time when overlapped using 4 streams	: 74.479774 ms
+ Avg. speedup gained (serialized - overlapped)	: -0.152063 ms
+
+Measured throughput:
+ Fully serialized execution		: 0.451439 GB/s
+ Overlapped using 4 streams		: 0.450517 GB/s

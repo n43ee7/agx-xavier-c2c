@@ -1,0 +1,23 @@
+[ simpleStreams ]
+
+Device synchronization method set to = 0 (Automatic Blocking)
+Setting reps to 100 to demonstrate steady state
+
+> GPU Device 0: "Xavier" with compute capability 7.2
+
+Device: <Xavier> canMapHostMemory: No
+Using cudaMallocHost, CUDA device does not support mapping of generic host memory
+> CUDA Capable: SM 7.2 hardware
+> 8 Multiprocessor(s) x 64 (Cores/Multiprocessor) = 512 (Cores)
+> scale_factor = 1.0000
+> array_size   = 16777216
+
+> Using CPU/GPU Device Synchronization method (cudaDeviceScheduleAuto)
+> cudaMallocHost() allocating 64.00 Mbytes of system memory
+
+Starting Test
+memcopy:	147.34
+kernel:		3.43
+non-streamed:	155.42
+4 streams:	155.86
+-------------------------------

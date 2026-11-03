@@ -1,0 +1,47 @@
+[P2P (Peer-to-Peer) GPU Bandwidth Latency Test]
+Device: 0, Xavier, pciBusID: 0, pciDeviceID: 0, pciDomainID:0
+Device: 1, Xavier, pciBusID: 0, pciDeviceID: 0, pciDomainID:c2c
+Device=0 CANNOT Access Peer Device=1
+Device=1 CANNOT Access Peer Device=0
+
+***NOTE: In case a device doesn't have P2P access to other one, it falls back to normal memcopy procedure.
+So you can see lesser Bandwidth (GB/s) and unstable Latency (us) in those cases.
+
+P2P Connectivity Matrix
+     D\D     0     1
+     0	     1     0
+     1	     0     1
+Unidirectional P2P=Disabled Bandwidth Matrix (GB/s)
+   D\D     0      1 
+     0 108.25   0.42 
+     1   0.43  98.71 
+Unidirectional P2P=Enabled Bandwidth (P2P Writes) Matrix (GB/s)
+   D\D     0      1 
+     0 105.07   0.42 
+     1   0.43  98.78 
+Bidirectional P2P=Disabled Bandwidth Matrix (GB/s)
+   D\D     0      1 
+     0 105.46   0.43 
+     1   0.43  99.42 
+Bidirectional P2P=Enabled Bandwidth Matrix (GB/s)
+   D\D     0      1 
+     0 105.53   0.43 
+     1   0.43  99.51 
+P2P=Disabled Latency Matrix (us)
+   GPU     0      1 
+     0   3.67 637.57 
+     1 778.26   3.78 
+
+   CPU     0      1 
+     0  20.82 707.96 
+     1 851.97   3.28 
+P2P=Enabled Latency (P2P Writes) Matrix (us)
+   GPU     0      1 
+     0   3.67 660.88 
+     1 734.97   3.81 
+
+   CPU     0      1 
+     0  19.01 731.39 
+     1 808.59   3.36 
+
+NOTE: The CUDA Samples are not meant for performance measurements. Results may vary when GPU Boost is enabled.

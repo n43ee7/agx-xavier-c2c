@@ -1,0 +1,12 @@
+[Unit]
+Description=C2C low latency: pin CPU/GPU/EMC clocks (jetson_clocks)
+After=nvpmodel.service
+Before=c2cd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/opt/c2c/bin/c2c-svc clocks
+
+[Install]
+WantedBy=multi-user.target

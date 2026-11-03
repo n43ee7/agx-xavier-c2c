@@ -1,0 +1,8 @@
+RAM verification of the new slave (192.168.4.173), 2026-11-02
+- device tree board ids: 2888-0004-400 (P2888-0004 = Jetson AGX Xavier 32 GB module), 2822-0000-700 (carrier)
+- kernel: "Memory: 31655220K/32639676K available" (32,639,676 kB physical, rest is firmware carveouts)
+- MemTotal 31,734,540 kB
+- write/verify test (tools/dev/ramcheck.c): 27 GiB filled with a unique per-word hash, verified, twice with different seeds
+    pass 1: 27.00 GiB written 5.13 GB/s, verified 4.49 GB/s, errors 0
+    pass 2: 27.00 GiB written 5.25 GB/s, verified 4.53 GB/s, errors 0
+  Aliased (fake) capacity or bad cells would show as mismatches. Result: genuine 32 GB.

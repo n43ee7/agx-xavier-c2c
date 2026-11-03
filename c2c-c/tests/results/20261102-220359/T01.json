@@ -1,0 +1,14 @@
+{
+  "id": "T01",
+  "name": "link health",
+  "status": "FAIL",
+  "summary": "RTT 0.312 ms avg, TCP 0.330 Gbit/s master->slave, 2.026 Gbit/s slave->master",
+  "time": "2026-11-02 22:04:13",
+  "metrics": {
+    "rtt_avg_ms": 0.312,
+    "rtt_max_ms": 0.902,
+    "rtt_mdev_ms": 0.042,
+    "tcp_m2s_gbps": 0.33,
+    "tcp_s2m_gbps": 2.026
+  }
+}

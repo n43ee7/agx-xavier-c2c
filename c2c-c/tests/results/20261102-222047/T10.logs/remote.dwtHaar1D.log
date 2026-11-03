@@ -1,0 +1,11 @@
+/home/jetson-agx/C2C-thunderbolt/tests/build/samples/3_Imaging/dwtHaar1D/dwtHaar1D Starting...
+
+GPU Device 0: "Xavier" with compute capability 7.2
+
+source file    = "./data/signal.dat"
+reference file = "result.dat"
+gold file      = "./data/regression.gold.dat"
+Reading signal from "./data/signal.dat"
+Writing result to "result.dat"
+Reading reference result from "./data/regression.gold.dat"
+Test success!

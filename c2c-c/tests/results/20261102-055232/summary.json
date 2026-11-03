@@ -1,0 +1,12 @@
+{
+  "passed": 1,
+  "total": 1,
+  "tests": [
+    {
+      "id": "T11",
+      "name": "remote GPU survives link outage",
+      "status": "PASS",
+      "summary": "remote GPU job ran through a 1.5 s link cut: exit 0, results verified=True, total 10.8 s, link UP"
+    }
+  ]
+}

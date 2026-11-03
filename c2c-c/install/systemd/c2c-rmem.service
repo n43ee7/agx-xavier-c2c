@@ -1,0 +1,15 @@
+[Unit]
+Description=C2C remote memory - the peer's lent RAM as swap on this node
+After=c2cd.service
+Wants=c2cd.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/opt/c2c/bin/c2c-svc rmem-attach
+ExecStop=/opt/c2c/bin/c2c-svc rmem-detach
+TimeoutStartSec=240
+TimeoutStopSec=600
+
+[Install]
+WantedBy=multi-user.target

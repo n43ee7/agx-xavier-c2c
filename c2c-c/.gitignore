@@ -1,0 +1,32 @@
+# kernel build artifacts
+*.o
+*.ko
+*.mod
+*.mod.c
+*.cmd
+.*.cmd
+Module.symvers
+modules.order
+.tmp_versions/
+# user-space binaries
+daemon/c2cd
+daemon/c2cctl
+tools/test_bw_spd/test_bw_spd
+rmem/c2c-memd
+rmem/c2c-rmem
+tests/build/
+# never commit a link key
+*.key
+gpu/build/
+gpu/lib/
+gpu/libc2ccuda.so
+gpu/c2c-gpud
+gpu/c2c-gpu-ls
+gpu/fatdump
+gpu/c2c-gpu-bench
+tools/rawlink/rawpp
+
+# the repo root ignores these patterns; inside c2c-c they are real sources
+# (Makefiles) or kept test evidence (*.log under tests/results, docs/devices)
+!Makefile
+!*.log

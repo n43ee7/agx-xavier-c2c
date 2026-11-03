@@ -1,0 +1,7 @@
+[/home/jetson-agx/C2C-thunderbolt/tests/build/samples/0_Simple/asyncAPI/asyncAPI] - Starting...
+GPU Device 0: "Xavier" with compute capability 7.2
+
+CUDA device [Xavier]
+time spent executing by the GPU: 311.66
+time spent by CPU in CUDA calls: 311.80
+CPU executed 0 iterations while waiting for GPU to finish

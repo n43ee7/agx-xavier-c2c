@@ -1,0 +1,16 @@
+diff --git a/kernels.cu b/kernels.cu
+index 9352117..9f39599 100644
+--- a/kernels.cu
++++ b/kernels.cu
+@@ -175,6 +175,11 @@ CUresult spinKernel(volatile int *latch, CUstream stream, unsigned long long tim
+     CU_ASSERT(cuDeviceGetAttribute(&clocksPerMs, CU_DEVICE_ATTRIBUTE_CLOCK_RATE, dev));
+ 
+     unsigned long long timeoutClocks = clocksPerMs * timeoutMs;
++    // xavier-c2c patch: a GPU that cannot map host memory (e.g. a GPU on another
++    // board) cannot poll a host latch; skip the start blocker there.
++    int canMap = 1;
++    CU_ASSERT(cuDeviceGetAttribute(&canMap, CU_DEVICE_ATTRIBUTE_CAN_MAP_HOST_MEMORY, dev));
++    if (!canMap) return CUDA_SUCCESS;
+ 
+     spinKernelDevice<<<1, 1, 0, stream>>>(latch, timeoutClocks);
+ 

@@ -1,0 +1,26 @@
+{
+  "id": "T03",
+  "name": "CPU pool (16 cores, unmodified xz)",
+  "status": "PASS",
+  "summary": "xz 512 MiB: master-only 43.76 s, pooled 16 cores 25.86 s = 1.69x; slave did 31/64 chunks; CPU mid-run master 99.6% slave 99.3%",
+  "time": "2026-11-01 21:04:01",
+  "metrics": {
+    "data_mib": 512,
+    "chunks": 64,
+    "chunk_mib": 8,
+    "master_only_s": 43.76,
+    "pooled_s": 25.86,
+    "speedup": 1.69,
+    "master_only_mib_s": 11.7,
+    "pooled_mib_s": 19.8,
+    "chunks_done_by_slave": 31,
+    "compressed_mib": 140.8,
+    "link_tx_mib": 251.6,
+    "link_rx_mib": 68.4,
+    "cpu_util_mid_run": {
+      "master": 99.6,
+      "slave": 99.3
+    },
+    "verified": true
+  }
+}

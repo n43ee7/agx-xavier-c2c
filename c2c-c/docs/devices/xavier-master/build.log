@@ -1,0 +1,57 @@
+make: Entering directory '/opt/c2c/src/kernel/host'
+make -C /lib/modules/5.10.216-tegra/build M=/opt/c2c/src/kernel/host clean
+make[1]: Entering directory '/usr/src/linux-headers-5.10.216-tegra-ubuntu20.04_aarch64/kernel-5.10'
+make[1]: Leaving directory '/usr/src/linux-headers-5.10.216-tegra-ubuntu20.04_aarch64/kernel-5.10'
+make -C /lib/modules/5.10.216-tegra/build M=/opt/c2c/src/kernel/host modules
+make[1]: Entering directory '/usr/src/linux-headers-5.10.216-tegra-ubuntu20.04_aarch64/kernel-5.10'
+  CC [M]  /opt/c2c/src/kernel/host/c2c_host.o
+  MODPOST /opt/c2c/src/kernel/host/Module.symvers
+  CC [M]  /opt/c2c/src/kernel/host/c2c_host.mod.o
+  LD [M]  /opt/c2c/src/kernel/host/c2c_host.ko
+make[1]: Leaving directory '/usr/src/linux-headers-5.10.216-tegra-ubuntu20.04_aarch64/kernel-5.10'
+make: Leaving directory '/opt/c2c/src/kernel/host'
+make: Entering directory '/opt/c2c/src/daemon'
+rm -f *.o c2cd c2cctl
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -I../common -c -o c2cd.o c2cd.cpp
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -I../common -c -o link.o link.cpp
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -I../common -c -o tun.o tun.cpp
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -I../common -c -o sysinfo.o sysinfo.cpp
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -I../common -c -o sha256.o sha256.cpp
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -I../common -c -o util.o util.cpp
+g++ -pthread -o c2cd c2cd.o link.o tun.o sysinfo.o sha256.o util.o
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -I../common -c -o c2cctl.o c2cctl.cpp
+g++ -pthread -o c2cctl c2cctl.o sha256.o util.o
+make: Leaving directory '/opt/c2c/src/daemon'
+make: Entering directory '/opt/c2c/src/rmem'
+rm -f c2c-memd c2c-rmem
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -pthread -o c2c-memd c2c-memd.cpp
+g++ -O2 -g -Wall -Wextra -Wno-missing-field-initializers -std=c++17 -pthread -pthread -o c2c-rmem c2c-rmem.cpp
+make: Leaving directory '/opt/c2c/src/rmem'
+make: Entering directory '/opt/c2c/src/gpu'
+rm -rf build lib libc2ccuda.so c2c-gpud c2c-gpu-ls fatdump
+mkdir -p build
+nm -D --defined-only /usr/lib/aarch64-linux-gnu/tegra/libcuda.so.1.1 | awk '$2=="T" {print $3}' | sort -u > build/syms.txt
+python3 gen_tramp.py build/syms.txt libc2ccuda.cpp build
+533 driver functions: 127 implemented, 406 trampolines
+g++ -O2 -g -std=c++17 -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations -Wno-missing-field-initializers -I/usr/local/cuda/include -pthread -fPIC -shared -fvisibility=hidden -Ibuild -o libc2ccuda.so libc2ccuda.cpp fatbin.cpp \
+    build/tramp.S -Wl,-soname,libcuda.so.1 -Wl,--no-undefined -ldl
+mkdir -p lib/cuda && ln -sf ../../libc2ccuda.so lib/cuda/libcuda.so.1
+g++ -O2 -g -std=c++17 -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations -Wno-missing-field-initializers -I/usr/local/cuda/include -pthread -o c2c-gpud c2c-gpud.cpp -L/usr/lib/aarch64-linux-gnu/tegra/ -lcuda
+g++ -O2 -g -std=c++17 -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations -Wno-missing-field-initializers -I/usr/local/cuda/include -pthread -o c2c-gpu-ls c2c-gpu-ls.cpp -L/usr/lib/aarch64-linux-gnu/tegra/ -lcuda
+g++ -O2 -g -std=c++17 -Wall -Wextra -Wno-unused-parameter -Wno-deprecated-declarations -Wno-missing-field-initializers -I/usr/local/cuda/include -pthread -o fatdump fatdump.cpp fatbin.cpp
+make: Leaving directory '/opt/c2c/src/gpu'
+make: Entering directory '/opt/c2c/src/tools/test_bw_spd'
+cc -O2 -Wall -Wextra -Wno-sign-compare -I../../common -o test_bw_spd test_bw_spd.c -lpthread
+make: Leaving directory '/opt/c2c/src/tools/test_bw_spd'
+make: Entering directory '/opt/c2c/src/kernel/kfix'
+make -C /lib/modules/5.10.216-tegra/build M=/opt/c2c/src/kernel/kfix clean
+make[1]: Entering directory '/usr/src/linux-headers-5.10.216-tegra-ubuntu20.04_aarch64/kernel-5.10'
+make[1]: Leaving directory '/usr/src/linux-headers-5.10.216-tegra-ubuntu20.04_aarch64/kernel-5.10'
+make -C /lib/modules/5.10.216-tegra/build M=/opt/c2c/src/kernel/kfix modules
+make[1]: Entering directory '/usr/src/linux-headers-5.10.216-tegra-ubuntu20.04_aarch64/kernel-5.10'
+  CC [M]  /opt/c2c/src/kernel/kfix/c2c_kfix.o
+  MODPOST /opt/c2c/src/kernel/kfix/Module.symvers
+  CC [M]  /opt/c2c/src/kernel/kfix/c2c_kfix.mod.o
+  LD [M]  /opt/c2c/src/kernel/kfix/c2c_kfix.ko
+make[1]: Leaving directory '/usr/src/linux-headers-5.10.216-tegra-ubuntu20.04_aarch64/kernel-5.10'
+make: Leaving directory '/opt/c2c/src/kernel/kfix'

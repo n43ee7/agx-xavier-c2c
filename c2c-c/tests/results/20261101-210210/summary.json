@@ -1,0 +1,42 @@
+{
+  "passed": 6,
+  "total": 6,
+  "tests": [
+    {
+      "id": "T01",
+      "name": "link health",
+      "status": "PASS",
+      "summary": "RTT 0.301 ms avg, TCP 3.715 Gbit/s master->slave, 3.719 Gbit/s slave->master"
+    },
+    {
+      "id": "T02",
+      "name": "cluster inventory (CPUs, RAM, GPUs)",
+      "status": "PASS",
+      "summary": "16 CPUs (8+8), 44.8 GiB RAM (14.54+30.26), 2 GPUs / 16 SMs / 1024 CUDA cores / 128 tensor cores, peak 2.82 FP32 TFLOPS"
+    },
+    {
+      "id": "T03",
+      "name": "CPU pool (16 cores, unmodified xz)",
+      "status": "PASS",
+      "summary": "xz 512 MiB: master-only 43.76 s, pooled 16 cores 25.86 s = 1.69x; slave did 31/64 chunks; CPU mid-run master 99.6% slave 99.3%"
+    },
+    {
+      "id": "T04",
+      "name": "RAM pool: remote paging (2 GiB cap, 8 GiB program)",
+      "status": "PASS",
+      "summary": "8 GiB program capped at 2G RAM: 8.0 GiB paged into slave RAM (memd resident 8.51 GiB), write 0.174 GiB/s, verify 0.083 GiB/s, 0 errors"
+    },
+    {
+      "id": "T05",
+      "name": "RAM pool: one program larger than master RAM",
+      "status": "PASS",
+      "summary": "one process used 20.5 GiB on a 14.5 GiB master (+5.96 GiB over physical): 12.49 GiB held in slave RAM, zram 0.0 GiB, write 0.411 GiB/s, verify 0.086 GiB/s, 0 errors"
+    },
+    {
+      "id": "T06",
+      "name": "GPU pool (2x Volta, memory + compute)",
+      "status": "PASS",
+      "summary": "2 GPUs together: 30.25 GiB allocated (10.5+19.75), FP32 2.792 TFLOPS, SGEMM 2.787 TFLOPS, tensor-core HGEMM 20.503 TFLOPS, 231.3 GB/s mem bandwidth; slave GPU 99.7% peak load (c2cd telemetry)"
+    }
+  ]
+}

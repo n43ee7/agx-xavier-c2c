@@ -1,0 +1,11 @@
+simpleTexture starting...
+GPU Device 0: "Xavier" with compute capability 7.2
+
+Loaded 'lena_bw.pgm', 512 x 512 pixels
+Processing time: 0.172000 (ms)
+1524.09 Mpixels/sec
+Wrote './data/lena_bw_out.pgm'
+Comparing files
+	output:    <./data/lena_bw_out.pgm>
+	reference: <./data/ref_rotated.pgm>
+simpleTexture completed, returned OK

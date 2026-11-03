@@ -1,0 +1,23 @@
+[Unit]
+Description=C2C remote GPU server - lends this node's GPU to the C2C peer
+Documentation=file:///opt/c2c/src/gpu/README.md
+After=c2cd.service c2c-gadget.service
+Wants=c2cd.service
+
+[Service]
+Type=simple
+# serves the raw USB channels (/dev/c2cchN) + TCP on the link IP, master only.
+# settings (gpud_*, gpu_transport, raw_channels, master_ip/slave_ip) are read
+# from /etc/c2c/c2c.conf
+ExecStart=/opt/c2c/bin/c2c-gpud --config /etc/c2c/c2c.conf -c /var/cache/c2c-gpud
+Restart=always
+RestartSec=2
+Nice=-5
+CacheDirectory=c2c-gpud
+# GPU power gating goes off while a client is connected and back on after
+# (runtime sysfs only, SIGTERM restores it too)
+KillMode=mixed
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target
